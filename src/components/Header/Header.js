@@ -18,7 +18,7 @@ import React from 'react';
 import './Header.css';
 import './Navigation.css';
 import logoPath from '../../images/logo.svg';
-import avatarDefault from '../../images/avatar-default.png';
+import avatarDefault from '../../images/avatar-default.jpg';
 
 const Header = ({ weatherData, handleAddClick }) => {
   if (!weatherData) return null;
@@ -34,7 +34,7 @@ const Header = ({ weatherData, handleAddClick }) => {
       <div className="header__container">
         <img src={logoPath} alt="logo" className="header__logo" />
         <p className="header__date">
-          {currentData}, {weatherData.city}
+          {currentDate}, {weatherData.city}
         </p>
       </div>
       <div className="header__nav">
@@ -47,7 +47,7 @@ const Header = ({ weatherData, handleAddClick }) => {
             </li>
             <li>
               <div className="navigation__link">
-                {userName}
+                {username}
                 {avatar ? (
                   <img
                     className="navigation__user"
