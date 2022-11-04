@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 } */
+
+
+.page {
+background-color: pink;
+}
+
+.page__wrapper {
+background-color: darkcyan;
+}
+

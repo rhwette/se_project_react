@@ -7,10 +7,10 @@ import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
 import { location } from '../../utils/constants';
-import {
-  getForecastWeather,
-  filterDataFromWeatherAPI,
-} from '../../utils/weatherApi';
+// import {
+//   getForecastWeather,
+//   filterDataFromWeatherAPI,
+// } from '../../utils/weatherApi';
 import { defaultClothingItems } from '../../utils/clothingItems';
 import weatherApi from '../../utils/weatherApi';
 
@@ -18,7 +18,7 @@ import secretKey from '../../secret';
 
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
-  const [clothingItems, setClothingsItems] = React.useState({});
+  const [clothingItems, setClothingItems] = React.useState({});
   const [activeModal, setActiveModal] = useState();
   const [selectedCard, setSelectedCard] = React.useState(null);
 
@@ -36,14 +36,14 @@ const App = () => {
       //api key
       getForecastWeather(location, secretKey)
         .then((data) => {
-          setWeatherData(filterDataFromWeatherAPI(data));
+          setWeatherData(filterDataFromWeatherApi(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
 
   React.useEffect(() => {
-    setClothingsItems(defaultClothingItems);
+    setClothingItems(defaultClothingItems);
   }, []);
 
   return (
@@ -88,7 +88,7 @@ const App = () => {
               placeholder="Image URL"
               required
             />
-            <span className="modal--error" id="place-link-error"></span>
+            <span className="modal__error" id="place-link-error"></span>
           </label>
           <p>Select the weather type:</p>
           <div className="modal__input modal__input_type_radio">

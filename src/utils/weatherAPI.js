@@ -55,4 +55,5 @@ const filterDataFromWeatherAPI = (data) => {
   return weather;
 };
 
-export { getForecastWeather, filterDataFromWeatherAPI };
+// export { getForecastWeather, filterDataFromWeatherAPI };
+export default weatherApi;

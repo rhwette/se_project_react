@@ -31,7 +31,7 @@ function Main({ weatherData, cards, onCardClick }) {
 
   return (
     <main className="main">
-      <WeatherCard weatherData={weatherDatas} />
+      <WeatherCard weatherData={weatherData} />
       <section className="main__clothes">
         <div className="main__info">
           <div className="main__description-container">
@@ -57,3 +57,5 @@ function Main({ weatherData, cards, onCardClick }) {
     </main>
   );
 }
+
+export default Main;
