@@ -16,7 +16,21 @@ import './Main.css';
 import ItemCard from '../ItemCard/ItemCard';
 import WeatherCard from '../WeatherCard/WeatherCard';
 
+// import defaultClothingItems from '../../utils/clothingItems';
+import clothingItems from '../../utils/clothingItems';
+// const cards = defaultClothingItems;
+const cards = clothingItems;
+
+// console.log('defaultClothingItems=', defaultClothingItems);
+console.log('clothingItems=', clothingItems);
+console.log('cards =', cards);
+// use below to show weather type for each clothing type
+for (let i = 0; i <= cards.length; i++) {
+  console.log('cards weather=', cards[i].weather);
+}
+
 function Main({ weatherData, cards, onCardClick }) {
+  console.log('actualWeather=', actualWeather);
   const actualWeather = weatherData.temperature;
 
   const weatherType = () => {

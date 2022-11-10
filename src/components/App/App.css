@@ -39,10 +39,12 @@
 
 
 .page {
-background-color: pink;
+  max-width: 980px;
+background-color: blue;
 }
 
 .page__wrapper {
-background-color: darkcyan;
+  max-width: 60px;
+background-color: green;
 }
 

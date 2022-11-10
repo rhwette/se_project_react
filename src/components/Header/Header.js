@@ -22,7 +22,7 @@ import avatarDefault from '../../images/avatar-default.jpg';
 
 const Header = ({ weatherData, handleAddClick }) => {
   if (!weatherData) return null;
-  const currentDate = new DataTransfer().toLocaleString('default', {
+  const currentDate = new Date().toLocaleString('default', {
     month: 'long',
     day: 'numeric',
   });
@@ -71,3 +71,18 @@ const Header = ({ weatherData, handleAddClick }) => {
 };
 
 export default Header;
+
+// import React from 'react';
+// import headerLogo from '../images/calorieZen.png';
+// import './AppHeader.css';
+
+// function AppHeader() {
+//   return (
+//     <div>
+//       <img src={headerLogo} />
+//       <h1>Calorie-Zen1234</h1>
+//     </div>
+//   );
+// }
+
+// export default AppHeader;

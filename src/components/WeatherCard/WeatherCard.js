@@ -4,3 +4,7 @@
 //  Weather data can be v. big
 //    but only need temperature to render in the card
 //    use Fahrenheit
+
+const WeatherCard = 'test test weather';
+
+export default WeatherCard;

@@ -9,7 +9,7 @@
 // so run logic here inside the weatherAPI module
 
 //  API request format
-// https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}
+// https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${ApiKey}
 //
 
 // logic defining temp range
@@ -33,10 +33,15 @@
 // } else if (temperature <= 44) {
 //   return 'very cold';
 // }
+// import ApiKey from '../ApiKey';
+// import { location } from './constants';
+// const ApiKey = '908ec48e793598e8e52c18af2928863c';
 
-const getForecastWeather = (location, APIkey) => {
-  const parsedLocation = `${location.latitude}, ${location.longitude}`;
-  return fetch('https://api.weather..................').then((res) => {
+export const getForecastWeather = ({ location }, ApiKey) => {
+  // const parsedLocation = `${location.latitude}, ${location.longitude}`;
+  return fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${ApiKey}`
+  ).then((res) => {
     if (res.ok) {
       return res.json();
     } else {
@@ -45,7 +50,7 @@ const getForecastWeather = (location, APIkey) => {
   });
 };
 
-const filterDataFromWeatherAPI = (data) => {
+export const filterDataFromWeatherAPI = (data) => {
   if (!data) {
     return null;
   }
@@ -56,4 +61,4 @@ const filterDataFromWeatherAPI = (data) => {
 };
 
 // export { getForecastWeather, filterDataFromWeatherAPI };
-export default weatherApi;
+// export default weatherApi;

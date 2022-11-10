@@ -5,16 +5,21 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+// import ItemCard from '../ItemCard/ItemCard';
 import ItemModal from '../ItemModal/ItemModal';
+// import { location } from '../../utils/constants';
 import { location } from '../../utils/constants';
-// import {
-//   getForecastWeather,
-//   filterDataFromWeatherAPI,
-// } from '../../utils/weatherApi';
-import { defaultClothingItems } from '../../utils/clothingItems';
-import weatherApi from '../../utils/weatherApi';
+import { getForecastWeather } from '../../utils/weatherApi';
+import { filterDataFromWeatherAPI } from '../../utils/weatherApi';
+// import { defaultClothingItems } from '../../utils/clothingItems';
+import defaultClothingItems from '../../utils/clothingItems';
+// import clothingItems from '../../utils/clothingItems';
+// import cards from '../../utils/clothingItems';
+// const cards = { defaultClothingItems };
 
-import secretKey from '../../secret';
+import { ApiKey } from '../../utils/constants';
+
+// const cards = clothingItems;
 
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
@@ -22,6 +27,7 @@ const App = () => {
   const [activeModal, setActiveModal] = useState();
   const [selectedCard, setSelectedCard] = React.useState(null);
 
+  console.log('ApiKey=', ApiKey);
   const handleCardClick = (card) => {
     setSelectedCard(card);
     setActiveModal('preview');
@@ -33,16 +39,16 @@ const App = () => {
 
   React.useEffect(() => {
     if (location.latitude && location.longitude) {
-      //api key
-      getForecastWeather(location, secretKey)
+      getForecastWeather({ location }, ApiKey)
         .then((data) => {
-          setWeatherData(filterDataFromWeatherApi(data));
+          setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
 
   React.useEffect(() => {
+    // setClothingItems(defaultClothingItems);
     setClothingItems(defaultClothingItems);
   }, []);
 
@@ -136,25 +142,3 @@ const App = () => {
 };
 
 export default App;
-
-// function App() {
-//   return <div className="App"></div>;
-// }
-
-// export default App;
-
-// if used, need to add {}
-/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */

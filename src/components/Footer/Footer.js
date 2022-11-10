@@ -1,3 +1,8 @@
-//  Footer component renders meta info about the app
-//    including copyright, production year
-//    Comprised of basic text
+import React from 'react';
+import './Footer.css';
+
+function Footer() {
+  return <div className="Footer"></div>;
+}
+
+export default Footer;
