@@ -41,14 +41,13 @@ const App = () => {
     if (location.latitude && location.longitude) {
       getForecastWeather({ location }, ApiKey)
         .then((data) => {
+          console.log('data=', data);
           setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
-
   console.log('location.latitude=', location.latitude);
-  console.log('data=', data);
 
   React.useEffect(() => {
     // setClothingItems(defaultClothingItems);
@@ -58,7 +57,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="App-content">
-        <Header />
+        <Header weatherData={'weatherData1234'} />
         {/* <Input placeholder={'add clothing item'} /> */}
         {/* <Button
           className="Button"

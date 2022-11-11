@@ -75,6 +75,11 @@
 import React, { Component } from 'react';
 import './Header.css';
 import logoPath from './wtwr°.jpg';
+// import avatar-default from '../images/avatar-default.jpg';
+import {
+  getForecastWeather,
+  filterDataFromWeatherAPI,
+} from '../../utils/weatherApi';
 
 function Header({ weatherData }) {
   const currentDate = new Date().toLocaleString('default', {

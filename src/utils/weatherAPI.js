@@ -65,9 +65,12 @@ const filterDataFromWeatherAPI = (data) => {
   if (!data) {
     return null;
   }
+  console.log('data=', data);
   const weather = {};
-  weather.city = data.location.name;
-  weather.temperature = data.current.temp_f;
+  // weather.city = data.location.name;
+  weather.city = data.name;
+  weather.temperature = data.main.temp;
+  console.log('weather=', weather);
   return weather;
 };
 
