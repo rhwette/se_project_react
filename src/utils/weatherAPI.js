@@ -37,8 +37,15 @@
 // import { location } from './constants';
 // const ApiKey = '908ec48e793598e8e52c18af2928863c';
 
-export const getForecastWeather = ({ location }, ApiKey) => {
-  // const parsedLocation = `${location.latitude}, ${location.longitude}`;
+// import location from './constants';
+// import ApiKey from './constants';
+
+const location = { latitude: '42.809', longitude: '-70.876' };
+const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
+console.log('ApiKey=', ApiKey);
+const parsedLocation = `${location.latitude}, ${location.longitude}`;
+
+const getForecastWeather = ({ location }, ApiKey) => {
   return fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${ApiKey}`
   ).then((res) => {
@@ -49,8 +56,11 @@ export const getForecastWeather = ({ location }, ApiKey) => {
     }
   });
 };
+console.log('parsedLocation=', parsedLocation);
+console.log('location=', location);
+console.log('res=', res);
 
-export const filterDataFromWeatherAPI = (data) => {
+const filterDataFromWeatherAPI = (data) => {
   if (!data) {
     return null;
   }
@@ -60,5 +70,4 @@ export const filterDataFromWeatherAPI = (data) => {
   return weather;
 };
 
-// export { getForecastWeather, filterDataFromWeatherAPI };
-// export default weatherApi;
+export { getForecastWeather, filterDataFromWeatherAPI };

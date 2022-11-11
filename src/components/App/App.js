@@ -47,23 +47,35 @@ const App = () => {
     }
   }, []);
 
+  console.log('location.latitude=', location.latitude);
+  console.log('data=', data);
+
   React.useEffect(() => {
     // setClothingItems(defaultClothingItems);
     setClothingItems(defaultClothingItems);
   }, []);
 
   return (
-    <div className="page">
-      <div className="page__wrapper">
-        <Header
+    <div className="App">
+      <div className="App-content">
+        <Header />
+        {/* <Input placeholder={'add clothing item'} /> */}
+        {/* <Button
+          className="Button"
+          clickHandler={() => {
+            console.log('you clicked me once');
+          }}
+        /> */}
+
+        {/* <Header
           weatherData={weatherData}
           handleAddClick={() => setActiveModal('create')}
-        />
-        <Main
+        /> */}
+        {/* <Main
           weatherData={weatherData}
           cards={clothingItems}
           onCardClick={handleCardClick}
-        />
+        /> */}
         <Footer />
       </div>
       {activeModal === 'create' && (

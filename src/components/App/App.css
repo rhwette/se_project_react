@@ -44,7 +44,76 @@ background-color: blue;
 }
 
 .page__wrapper {
-  max-width: 60px;
+  max-width: 60px;.App {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #000;
+  }
+  
+  .App-content {
+    max-width: 860px;
+    margin: 90px auto;
+  }
+  
+  .App-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .App-header {
+    background-color: red;
+  }
+  
+  .App-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      /* animation: App-logo-spin infinite 10s linear; */
+          animation: App-logo-spin infinite 10s linear;
+    }
+  }
+  
+  .App-header {
+    /* background-color: #282c34; */
+    background-color: greenyellow;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    /* color: white; */
+    color: red;
+  
+  }
+  
+  .App-link {
+    /* color: #61dafb; */
+    color: blue;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
 background-color: green;
 }
 
