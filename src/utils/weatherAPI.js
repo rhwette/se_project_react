@@ -43,6 +43,7 @@
 const location = { latitude: '42.809', longitude: '-70.876' };
 const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
 console.log('ApiKey=', ApiKey);
+console.log('location.latitude=', location.latitude);
 const parsedLocation = `${location.latitude}, ${location.longitude}`;
 
 const getForecastWeather = ({ location }, ApiKey) => {
@@ -50,6 +51,7 @@ const getForecastWeather = ({ location }, ApiKey) => {
     `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${ApiKey}`
   ).then((res) => {
     if (res.ok) {
+      console.log('res=', res);
       return res.json();
     } else {
       return Promise.reject(`Error: ${res.status}`);
@@ -58,7 +60,6 @@ const getForecastWeather = ({ location }, ApiKey) => {
 };
 console.log('parsedLocation=', parsedLocation);
 console.log('location=', location);
-console.log('res=', res);
 
 const filterDataFromWeatherAPI = (data) => {
   if (!data) {

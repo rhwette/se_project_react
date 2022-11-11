@@ -23,10 +23,11 @@ const cards = clothingItems;
 
 // console.log('defaultClothingItems=', defaultClothingItems);
 console.log('clothingItems=', clothingItems);
-console.log('cards =', cards);
 // console.log('WeatherCard=', WeatherCard);
 // use below to show weather type for each clothing type
-for (let i = 0; i <= cards.length; i++) {
+for (let i = 0; i < cards.length; i++) {
+  console.log('cards=', cards);
+  console.log('cards.length=', cards.length);
   console.log('cards weather=', cards[i].weather);
 }
 
