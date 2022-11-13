@@ -75,13 +75,14 @@
 import React, { Component } from 'react';
 import './Header.css';
 import logoPath from './wtwr°.jpg';
+import avatarPath from './avatar-default2.jpg';
 // import avatar-default from '../images/avatar-default.jpg';
 import {
   getForecastWeather,
   filterDataFromWeatherAPI,
 } from '../../utils/weatherApi';
 
-function Header({ currentDate, city, name }) {
+function Header({ currentDate, city, name, clickHandler }) {
   // const currentDate = new Date().toLocaleString('default', {
   //   month: 'long',
   //   day: 'numeric',
@@ -96,12 +97,16 @@ function Header({ currentDate, city, name }) {
         <img src={logoPath} alt="logo" className="header__logo" />
       </div>
       <div className="header__containerCenter">
-        <p className="header__textCenter">
+        <p className="header__contentCenter">
           {currentDate}, {city}
         </p>
       </div>
       <div className="header__containerRight">
-        <p className="header__textRight"> {name}</p>
+        <button onClick={clickHandler} className="header__button">
+          + Add clothes
+        </button>
+        <p className="header__contentRight"> {name}</p>
+        <img src={avatarPath} alt="avatar" className="header__avatar" />
       </div>
     </header>
   );

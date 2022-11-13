@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Header from '../Header/Header';
+// import Button from '../Button/Button';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
@@ -39,7 +40,7 @@ const App = () => {
     day: 'numeric',
   });
 
-  const visitorName = 'John Smith';
+  // const visitorName = 'John Smith';
   // console.log('currentDate=', currentDate);
   // console.log('weatherData.city=', weatherData.city);
   // console.log('weatherData.temperature=', weatherData.temperature);
@@ -72,14 +73,12 @@ const App = () => {
           currentDate={currentDate}
           city={weatherData.city}
           name={'Elise Bower'}
-        />
-        {/* <Input placeholder={'add clothing item'} /> */}
-        {/* <Button
-          className="Button"
           clickHandler={() => {
             console.log('you clicked me once');
           }}
-        /> */}
+          // avatar={}
+        />
+        {/* <Input placeholder={'add clothing item'} /> */}
         {/* <Header
           weatherData={weatherData}
           handleAddClick={() => setActiveModal('create')}
