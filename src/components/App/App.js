@@ -28,11 +28,21 @@ const App = () => {
   const [activeModal, setActiveModal] = useState();
   const [selectedCard, setSelectedCard] = React.useState(null);
 
-  console.log('ApiKey=', ApiKey);
+  // console.log('ApiKey=', ApiKey);
   const handleCardClick = (card) => {
     setSelectedCard(card);
     setActiveModal('preview');
   };
+
+  const currentDate = new Date().toLocaleString('default', {
+    month: 'long',
+    day: 'numeric',
+  });
+
+  const visitorName = 'John Smith';
+  // console.log('currentDate=', currentDate);
+  // console.log('weatherData.city=', weatherData.city);
+  // console.log('weatherData.temperature=', weatherData.temperature);
 
   const closeAllModals = () => {
     setActiveModal();
@@ -42,13 +52,13 @@ const App = () => {
     if (location.latitude && location.longitude) {
       getForecastWeather({ location }, ApiKey)
         .then((data) => {
-          console.log('data=', data);
+          console.log('APP JS data=', data);
           setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
-  console.log('location.latitude=', location.latitude);
+  // console.log('location.latitude=', location.latitude);
 
   React.useEffect(() => {
     // setClothingItems(defaultClothingItems);
@@ -58,7 +68,11 @@ const App = () => {
   return (
     <div className="App">
       <div className="App-content">
-        <Header weatherData={'weatherData1234'} />
+        <Header
+          currentDate={currentDate}
+          city={weatherData.city}
+          name={'Elise Bower'}
+        />
         {/* <Input placeholder={'add clothing item'} /> */}
         {/* <Button
           className="Button"
@@ -66,7 +80,6 @@ const App = () => {
             console.log('you clicked me once');
           }}
         /> */}
-
         {/* <Header
           weatherData={weatherData}
           handleAddClick={() => setActiveModal('create')}

@@ -81,25 +81,27 @@ import {
   filterDataFromWeatherAPI,
 } from '../../utils/weatherApi';
 
-function Header({ weatherData }) {
-  const currentDate = new Date().toLocaleString('default', {
-    month: 'long',
-    day: 'numeric',
-  });
-  const username = 'Elise Bauer';
+function Header({ currentDate, city, name }) {
+  // const currentDate = new Date().toLocaleString('default', {
+  //   month: 'long',
+  //   day: 'numeric',
+  // });
+  // const username = 'Elise Bauer';
   const avatar = '';
-  console.log('currentDate=', currentDate);
-  console.log('weatherData=', weatherData);
+  // console.log('currentDate=', currentDate);
+  // console.log('city=', city);
   return (
     <header className="header">
-      <div className="header__container">
+      <div className="header__containerLeft">
         <img src={logoPath} alt="logo" className="header__logo" />
-        <p className="header__date">
-          {currentDate}, {weatherData.city}
+      </div>
+      <div className="header__containerCenter">
+        <p className="header__textCenter">
+          {currentDate}, {city}
         </p>
-        {/* <h2> Hello World</h2> */}
-        {/* <p> index.css body makes me pink</p> */}
-        {/* <p> click to add clothing</p> */}
+      </div>
+      <div className="header__containerRight">
+        <p className="header__textRight"> {name}</p>
       </div>
     </header>
   );

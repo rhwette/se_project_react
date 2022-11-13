@@ -11,8 +11,27 @@
     margin: 20px auto 20px auto;
   }
 
-  .header__container {
+  .header__containerLeft {
     display: flex;
+    flex-direction: column;
+    width: 15%;
+    background-color: pink;
+
+  }
+
+  .header__containerCenter {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: lightskyblue;
+
+  }
+
+  .header__containerRight {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: green;
 
   }
 
@@ -23,16 +42,38 @@
     margin-top: 32px;
     margin-left: 40px;
     margin-bottom: 28px;
+    margin-right: 0;
 
   }
   
-  .header__date {
+  .header__textCenter {
     /* max-width: 860px; */
     /* margin: 90px auto; */
     color: black;
     display: flex;
     margin-top: 40px;
     margin-left: 24px;
+
+  }
+  .header__textRight {
+    /* max-width: 860px; */
+    /* margin: 90px auto; */
+    color: black;
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+    margin-left: 24px;
+
+  }
+
+  .header__date2 {
+    /* max-width: 860px; */ 
+    /* margin: 90px auto; */
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    margin-left: 240px;
 
   }
   
