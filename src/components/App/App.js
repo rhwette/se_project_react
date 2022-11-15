@@ -44,19 +44,6 @@ const App = () => {
   const currentDate1 = new Date();
   // console.log('currentDate1=', currentDate1);
   const currentHour = currentDate1.getHours();
-  // console.log('currentHour=', currentHour);
-  // let hour = getHours();
-  // console.log('hour', hour);
-  // let time = `currentDate.getHours() +
-  //   ':' +
-  //   currentDate.getMinutes() +
-  //   ':' +
-  //   currentDate.getSeconds()`;
-
-  // const visitorName = 'John Smith';
-  // console.log('currentDate=', currentDate);
-  // console.log('weatherData.city=', weatherData.city);
-  // console.log('weatherData.temperature=', weatherData.temperature);
 
   const closeAllModals = () => {
     setActiveModal();
@@ -101,21 +88,12 @@ const App = () => {
           }}
           // avatar={}
         />
-        <Main
-          currentHour={currentHour}
-          weatherDescription={weather.id}
-          temperature={weather.temperature}
-        />
-        {/* <Input placeholder={'add clothing item'} /> */}
-        {/* <Header
-          weatherData={weatherData}
-          handleAddClick={() => setActiveModal('create')}
-        /> */}
         {/* <Main
-          weatherData={weatherData}
-          cards={clothingItems}
-          onCardClick={handleCardClick}
+        currentHour={currentHour}
+        weatherDescription={weather.id}
+        temperature={weather.temperature}
         /> */}
+
         <Footer />
       </div>
       {activeModal === 'create' && (

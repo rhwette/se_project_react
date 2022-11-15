@@ -47,6 +47,10 @@ const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
 // console.log('location.latitude=', location.latitude);
 const parsedLocation = `${location.latitude}, ${location.longitude}`;
 
+// const currentDate1 = new Date();
+// const currentHour = currentDate1.getHours();
+// console.log('currentHour=', currentHour);
+
 const getForecastWeather = ({ location }, ApiKey) => {
   return fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${ApiKey}`
@@ -59,18 +63,31 @@ const getForecastWeather = ({ location }, ApiKey) => {
     }
   });
 };
-// console.log('res=', res);
-// console.log('parsedLocation=', parsedLocation);
-// console.log('location=', location);
-// console.log('Response=', Response);
+
 const filterDataFromWeatherAPI = (data) => {
   if (!data) {
     return null;
   }
 
+  let daytime = 'false';
+  let nighttime = 'false';
+  console.log('daytime=', daytime);
+  console.log('nighttime=', nighttime);
+
+  const currentDate1 = new Date();
+  const currentHour = currentDate1.getHours();
+  console.log('currentHour=', currentHour);
+
+  if (currentHour > 6 && currentHour < 18) {
+    daytime = 'true';
+  } else {
+    nighttime = 'true';
+  }
+  console.log('daytime=', daytime);
+  console.log('nighttime=', nighttime);
+
   console.log('data=', data);
   const weather = {};
-  // weather.city = data.location.name;
   weather.city = data.name;
   weather.temperature = data.main.temp;
   weather.id = data.weather[0].id;
@@ -78,6 +95,53 @@ const filterDataFromWeatherAPI = (data) => {
   console.log('weather.city=', weather.city);
   console.log('weather.temperature=', weather.temperature);
   console.log('weather.id=', weather.id);
+
+  let weatherIcon;
+  let containerColor;
+  let className;
+  function setDayWeather() {
+    if ((weather.id = 800)) {
+      weatherIcon = '../images/daySunny.jpg';
+      containerColor = '#00A3FF';
+      className = 'container__daySunny';
+    } else if (weather.id >= 801 && weather.id <= 804) {
+      weatherIcon = '../images/dayCloudy.jpg';
+      containerColor = '#00A3FF';
+      className = 'container__dayCloudy';
+    } else if (weather.id >= 500 && weather.id <= 531) {
+      weatherIcon = '../images/dayRain.jpg';
+      containerColor = '#6CA6C7';
+      className = 'container__dayRain';
+    }
+  }
+
+  function setNightWeather() {
+    if ((weather.id = 800)) {
+      weatherIcon = '../images/nightSunny.jpg';
+      containerColor = '#00A3FF';
+      className = 'container__nightSunny';
+    } else if (weather.id >= 801 && weather.id <= 804) {
+      weatherIcon = '../images/nightCloudy.jpg';
+      containerColor = '#00A3FF';
+      className = 'container__nightCloudy';
+    } else if (weather.id >= 500 && weather.id <= 531) {
+      weatherIcon = '../images/nightRain.jpg';
+      containerColor = '#6CA6C7';
+      className = 'container__nightRain';
+    }
+  }
+
+  if ('daytime') {
+    setDayWeather();
+  } else {
+    setNightWeather();
+  }
+
+  console.log('daytime=', daytime);
+  console.log('nighttime=', nighttime);
+  console.log('weatherIcon=', weatherIcon);
+  console.log('containerColor=', containerColor);
+  console.log('className=', className);
   return weather;
 };
 
