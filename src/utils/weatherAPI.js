@@ -40,7 +40,8 @@
 // import location from './constants';
 // import ApiKey from './constants';
 
-const location = { latitude: '42.809', longitude: '-70.876' };
+// const location = { latitude: '42.809', longitude: '-70.876' };
+const location = { latitude: '29.78', longitude: '-95.82' };
 const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
 // console.log('ApiKey=', ApiKey);
 // console.log('location.latitude=', location.latitude);
@@ -72,9 +73,11 @@ const filterDataFromWeatherAPI = (data) => {
   // weather.city = data.location.name;
   weather.city = data.name;
   weather.temperature = data.main.temp;
-  // console.log('weather=', weather);
-  // console.log('weather.city=', weather.city);
-  // console.log('weather.temperature=', weather.temperature);
+  weather.id = data.weather[0].id;
+  console.log('weather=', weather);
+  console.log('weather.city=', weather.city);
+  console.log('weather.temperature=', weather.temperature);
+  console.log('weather.id=', weather.id);
   return weather;
 };
 

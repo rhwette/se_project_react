@@ -30,10 +30,8 @@ const cards = clothingItems;
 // console.log('cards.length=', cards.length);
 // console.log('cards weather=', cards[i].weather);
 // }
-
-function Main({ weatherData, cards, onCardClick }) {
-  const actualWeather = weatherData.temperature;
-  // console.log('actualWeather=', actualWeather);
+function Main({ currentHour, weatherDescription, temperature }) {
+  const actualWeather = temperature;
 
   const weatherType = () => {
     if (actualWeather >= 86) {

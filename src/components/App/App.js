@@ -38,7 +38,20 @@ const App = () => {
   const currentDate = new Date().toLocaleString('default', {
     month: 'long',
     day: 'numeric',
+    time: 'numeric',
   });
+
+  const currentDate1 = new Date();
+  // console.log('currentDate1=', currentDate1);
+  const currentHour = currentDate1.getHours();
+  // console.log('currentHour=', currentHour);
+  // let hour = getHours();
+  // console.log('hour', hour);
+  // let time = `currentDate.getHours() +
+  //   ':' +
+  //   currentDate.getMinutes() +
+  //   ':' +
+  //   currentDate.getSeconds()`;
 
   // const visitorName = 'John Smith';
   // console.log('currentDate=', currentDate);
@@ -54,12 +67,22 @@ const App = () => {
       getForecastWeather({ location }, ApiKey)
         .then((data) => {
           console.log('APP JS data=', data);
+          const weather = {};
+          weather.city = data.name;
+          weather.temperature = data.main.temp;
+          weather.id = data.weather[0].id;
+          console.log('weather=', weather);
+          console.log('weather.city=', weather.city);
+          console.log('weather.temperature=', weather.temperature);
+          console.log('weather.id=', weather.id);
+          console.log('currentDate', currentDate);
+          console.log('currentHour', currentHour);
           setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
-  // console.log('location.latitude=', location.latitude);
+  console.log('location.latitude=', location.latitude);
 
   React.useEffect(() => {
     // setClothingItems(defaultClothingItems);
@@ -77,6 +100,11 @@ const App = () => {
             console.log('you clicked me once');
           }}
           // avatar={}
+        />
+        <Main
+          currentHour={currentHour}
+          weatherDescription={weather.id}
+          temperature={weather.temperature}
         />
         {/* <Input placeholder={'add clothing item'} /> */}
         {/* <Header
