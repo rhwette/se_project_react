@@ -1,62 +1,13 @@
-// WeatherAPI component
-//    keep all the data manupulation here(fetching and filtering)
-//    import the weatherAPI.js module to App.js
-
-// the request to the API should only happen when
-//    mounting the App component
-
-//  the cards need to be filtered by weather typo in 'Main.js",
-// so run logic here inside the weatherAPI module
-
-//  API request format
-// https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${ApiKey}
-//
-
-// logic defining temp range
-// if (temperature >= 86) {
-//     return 'hot';
-//   } else if (temperature >= 66 && temperature <= 85) {
-//     return 'warm';
-//   } else if (temperature <= 65) {
-//     return 'cold';
-//   }
-
-//alternate logic
-// if (temperature >= 98) {
-//   return 'very hot';
-// } else if (temperature >= 86 && temperature <= 97) {
-//   return 'hot';
-// } else if (temperature >= 66 && temperature <= 85) {
-//   return 'warm';
-// } else if (temperature >= 45 && temperature <= 65) {
-//   return 'cold';
-// } else if (temperature <= 44) {
-//   return 'very cold';
-// }
-// import ApiKey from '../ApiKey';
-// import { location } from './constants';
-// const ApiKey = '908ec48e793598e8e52c18af2928863c';
-
-// import location from './constants';
-// import ApiKey from './constants';
-
 // const location = { latitude: '42.809', longitude: '-70.876' };
 const location = { latitude: '29.78', longitude: '-95.82' };
 const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
-// console.log('ApiKey=', ApiKey);
-// console.log('location.latitude=', location.latitude);
 const parsedLocation = `${location.latitude}, ${location.longitude}`;
-
-// const currentDate1 = new Date();
-// const currentHour = currentDate1.getHours();
-// console.log('currentHour=', currentHour);
 
 const getForecastWeather = ({ location }, ApiKey) => {
   return fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${ApiKey}`
   ).then((res) => {
     if (res.ok) {
-      // console.log('res=', res.json);
       return res.json();
     } else {
       return Promise.reject(`Error: ${res.status}`);
@@ -108,26 +59,58 @@ const filterDataFromWeatherAPI = (data) => {
       weatherIcon = '../images/dayCloudy.jpg';
       containerColor = '#00A3FF';
       className = 'container__dayCloudy';
+    } else if (weather.id >= 701 && weather.id <= 781) {
+      weatherIcon = '../images/dayFog.jpg';
+      containerColor = '#6CA6C7';
+      className = 'container__dayFog';
+    } else if (weather.id >= 600 && weather.id <= 622) {
+      weatherIcon = '../images/daySnow.jpg';
+      containerColor = '#6CA6C7';
+      className = 'container__daySnow';
     } else if (weather.id >= 500 && weather.id <= 531) {
       weatherIcon = '../images/dayRain.jpg';
       containerColor = '#6CA6C7';
       className = 'container__dayRain';
+    } else if (weather.id >= 300 && weather.id <= 321) {
+      weatherIcon = '../images/dayRain.jpg';
+      containerColor = '#6CA6C7';
+      className = 'container__dayRain';
+    } else if (weather.id >= 200 && weather.id <= 232) {
+      weatherIcon = '../images/dayStorm.jpg';
+      containerColor = '#6CA6C7';
+      className = 'container__dayStorm';
     }
   }
 
   function setNightWeather() {
     if ((weather.id = 800)) {
       weatherIcon = '../images/nightSunny.jpg';
-      containerColor = '#00A3FF';
+      containerColor = '#286897';
       className = 'container__nightSunny';
     } else if (weather.id >= 801 && weather.id <= 804) {
       weatherIcon = '../images/nightCloudy.jpg';
-      containerColor = '#00A3FF';
+      containerColor = '#286897';
       className = 'container__nightCloudy';
+    } else if (weather.id >= 701 && weather.id <= 781) {
+      weatherIcon = '../images/nightFog.jpg';
+      containerColor = '#286897';
+      className = 'container__nightFog';
+    } else if (weather.id >= 600 && weather.id <= 622) {
+      weatherIcon = '../images/nightSnow.jpg';
+      containerColor = '#286897';
+      className = 'container__nightSnow';
     } else if (weather.id >= 500 && weather.id <= 531) {
       weatherIcon = '../images/nightRain.jpg';
-      containerColor = '#6CA6C7';
+      containerColor = '#286897';
       className = 'container__nightRain';
+    } else if (weather.id >= 300 && weather.id <= 321) {
+      weatherIcon = '../images/nightRain.jpg';
+      containerColor = '#286897';
+      className = 'container__nightRain';
+    } else if (weather.id >= 200 && weather.id <= 232) {
+      weatherIcon = '../images/nightStorm.jpg';
+      containerColor = '##286897';
+      className = 'container__nightStorm';
     }
   }
 

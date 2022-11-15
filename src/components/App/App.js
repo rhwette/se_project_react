@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-// nov 12 0805
 import React, { useState } from 'react';
 import './App.css';
 import Header from '../Header/Header';
@@ -9,19 +7,11 @@ import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 // import ItemCard from '../ItemCard/ItemCard';
 import ItemModal from '../ItemModal/ItemModal';
-// import { location } from '../../utils/constants';
 import { location } from '../../utils/constants';
 import { getForecastWeather } from '../../utils/weatherApi';
 import { filterDataFromWeatherAPI } from '../../utils/weatherApi';
-// import { defaultClothingItems } from '../../utils/clothingItems';
 import defaultClothingItems from '../../utils/clothingItems';
-// import clothingItems from '../../utils/clothingItems';
-// import cards from '../../utils/clothingItems';
-// const cards = { defaultClothingItems };
-
 import { ApiKey } from '../../utils/constants';
-
-// const cards = clothingItems;
 
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
@@ -29,7 +19,6 @@ const App = () => {
   const [activeModal, setActiveModal] = useState();
   const [selectedCard, setSelectedCard] = React.useState(null);
 
-  // console.log('ApiKey=', ApiKey);
   const handleCardClick = (card) => {
     setSelectedCard(card);
     setActiveModal('preview');
@@ -42,7 +31,6 @@ const App = () => {
   });
 
   const currentDate1 = new Date();
-  // console.log('currentDate1=', currentDate1);
   const currentHour = currentDate1.getHours();
 
   const closeAllModals = () => {
@@ -72,7 +60,6 @@ const App = () => {
   console.log('location.latitude=', location.latitude);
 
   React.useEffect(() => {
-    // setClothingItems(defaultClothingItems);
     setClothingItems(defaultClothingItems);
   }, []);
 
