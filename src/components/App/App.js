@@ -30,9 +30,6 @@ const App = () => {
     time: 'numeric',
   });
 
-  const currentDate1 = new Date();
-  const currentHour = currentDate1.getHours();
-
   const closeAllModals = () => {
     setActiveModal();
   };
@@ -51,7 +48,7 @@ const App = () => {
           console.log('weather.temperature=', weather.temperature);
           console.log('weather.id=', weather.id);
           console.log('currentDate', currentDate);
-          console.log('currentHour', currentHour);
+          // console.log('currentHour', currentHour);
           setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch((err) => console.log(err));
@@ -75,11 +72,11 @@ const App = () => {
           }}
           // avatar={}
         />
-        {/* <Main
-        currentHour={currentHour}
-        weatherDescription={weather.id}
-        temperature={weather.temperature}
-        /> */}
+        <Main
+          // icon={weatherData.weatherIcon}
+          className={weatherData.className}
+          temperature={weatherData.temperature}
+        />
 
         <Footer />
       </div>

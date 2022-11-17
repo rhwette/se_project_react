@@ -1,5 +1,7 @@
+import { location } from './constants';
+
 // const location = { latitude: '42.809', longitude: '-70.876' };
-const location = { latitude: '29.78', longitude: '-95.82' };
+// const location = { latitude: '29.78', longitude: '-95.82' };
 const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
 const parsedLocation = `${location.latitude}, ${location.longitude}`;
 
@@ -15,30 +17,33 @@ const getForecastWeather = ({ location }, ApiKey) => {
   });
 };
 
+// console.log('data=', data);
+
 const filterDataFromWeatherAPI = (data) => {
+  console.log('data=', data);
   if (!data) {
     return null;
   }
-
-  let daytime = 'false';
-  let nighttime = 'false';
-  console.log('daytime=', daytime);
-  console.log('nighttime=', nighttime);
+  let weather = {};
+  weather.daytime = 'false';
+  weather.nighttime = 'false';
+  console.log('daytime=', weather.daytime);
+  console.log('nighttime=', weather.nighttime);
 
   const currentDate1 = new Date();
   const currentHour = currentDate1.getHours();
   console.log('currentHour=', currentHour);
 
   if (currentHour > 6 && currentHour < 18) {
-    daytime = 'true';
+    weather.daytime = 'true';
   } else {
-    nighttime = 'true';
+    weather.nighttime = 'true';
   }
-  console.log('daytime=', daytime);
-  console.log('nighttime=', nighttime);
+  console.log('daytime=', weather.daytime);
+  console.log('nighttime=', weather.nighttime);
 
   console.log('data=', data);
-  const weather = {};
+
   weather.city = data.name;
   weather.temperature = data.main.temp;
   weather.id = data.weather[0].id;
@@ -47,70 +52,53 @@ const filterDataFromWeatherAPI = (data) => {
   console.log('weather.temperature=', weather.temperature);
   console.log('weather.id=', weather.id);
 
-  let weatherIcon;
-  let containerColor;
-  let className;
   function setDayWeather() {
-    if ((weather.id = 800)) {
-      weatherIcon = '../images/daySunny.jpg';
-      containerColor = '#00A3FF';
-      className = 'container__daySunny';
+    if (weather.id === 800) {
+      weather.weatherIcon = '../images/daySunny.png';
+      weather.className = 'main__banner-daySunny';
     } else if (weather.id >= 801 && weather.id <= 804) {
-      weatherIcon = '../images/dayCloudy.jpg';
-      containerColor = '#00A3FF';
-      className = 'container__dayCloudy';
+      weather.weatherIcon = '../images/dayCloudy.png';
+      weather.className = 'main__banner-dayCloudy';
     } else if (weather.id >= 701 && weather.id <= 781) {
-      weatherIcon = '../images/dayFog.jpg';
-      containerColor = '#6CA6C7';
-      className = 'container__dayFog';
+      weather.weatherIcon = '../images/dayFog.png';
+      weather.className = 'main__banner-dayFog';
     } else if (weather.id >= 600 && weather.id <= 622) {
-      weatherIcon = '../images/daySnow.jpg';
-      containerColor = '#6CA6C7';
-      className = 'container__daySnow';
+      weather.weatherIcon = '../images/daySnow.png';
+      weather.className = 'main__banner-daySnow';
     } else if (weather.id >= 500 && weather.id <= 531) {
-      weatherIcon = '../images/dayRain.jpg';
-      containerColor = '#6CA6C7';
-      className = 'container__dayRain';
+      weather.weatherIcon = '../images/dayRain.png';
+      weather.className = 'main__banner-dayRain';
     } else if (weather.id >= 300 && weather.id <= 321) {
-      weatherIcon = '../images/dayRain.jpg';
-      containerColor = '#6CA6C7';
-      className = 'container__dayRain';
+      weather.weatherIcon = '../images/dayRain.png';
+      weather.className = 'main__banner-dayRain';
     } else if (weather.id >= 200 && weather.id <= 232) {
-      weatherIcon = '../images/dayStorm.jpg';
-      containerColor = '#6CA6C7';
-      className = 'container__dayStorm';
+      weather.weatherIcon = '../images/dayStorm.png';
+      weather.className = 'main__banner-dayStorm';
     }
   }
 
   function setNightWeather() {
-    if ((weather.id = 800)) {
-      weatherIcon = '../images/nightSunny.jpg';
-      containerColor = '#286897';
-      className = 'container__nightSunny';
+    if (weather.id === 800) {
+      weather.weatherIcon = '../images/nightSunny.png';
+      weather.className = 'main__banner-nightSunny';
     } else if (weather.id >= 801 && weather.id <= 804) {
-      weatherIcon = '../images/nightCloudy.jpg';
-      containerColor = '#286897';
-      className = 'container__nightCloudy';
+      weather.weatherIcon = '../images/nightCloudy.png';
+      weather.className = 'main__banner-nightCloudy';
     } else if (weather.id >= 701 && weather.id <= 781) {
-      weatherIcon = '../images/nightFog.jpg';
-      containerColor = '#286897';
-      className = 'container__nightFog';
+      weather.weatherIcon = '../images/nightFog.png';
+      weather.className = 'main__banner-nightFog';
     } else if (weather.id >= 600 && weather.id <= 622) {
-      weatherIcon = '../images/nightSnow.jpg';
-      containerColor = '#286897';
-      className = 'container__nightSnow';
+      weather.weatherIcon = '../images/nightSnow.png';
+      weather.className = 'main__banner-nightSnow';
     } else if (weather.id >= 500 && weather.id <= 531) {
-      weatherIcon = '../images/nightRain.jpg';
-      containerColor = '#286897';
-      className = 'container__nightRain';
+      weather.weatherIcon = '../images/nightRain.png';
+      weather.className = 'main__banner-nightRain';
     } else if (weather.id >= 300 && weather.id <= 321) {
-      weatherIcon = '../images/nightRain.jpg';
-      containerColor = '#286897';
-      className = 'container__nightRain';
+      weather.weatherIcon = '../images/nightRain.png';
+      weather.className = 'main__banner-nightRain';
     } else if (weather.id >= 200 && weather.id <= 232) {
-      weatherIcon = '../images/nightStorm.jpg';
-      containerColor = '##286897';
-      className = 'container__nightStorm';
+      weather.weatherIcon = '../images/nightStorm.png';
+      weather.className = 'main__banner-nightStorm';
     }
   }
 
@@ -120,11 +108,11 @@ const filterDataFromWeatherAPI = (data) => {
     setNightWeather();
   }
 
-  console.log('daytime=', daytime);
-  console.log('nighttime=', nighttime);
-  console.log('weatherIcon=', weatherIcon);
-  console.log('containerColor=', containerColor);
-  console.log('className=', className);
+  console.log('daytime=', weather.daytime);
+  console.log('nighttime=', weather.nighttime);
+  console.log('weatherIcon=', weather.weatherIcon);
+  console.log('className=', weather.className);
+
   return weather;
 };
 
