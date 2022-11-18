@@ -12,9 +12,11 @@ function Main({ icon, className, temperature }) {
   return (
     <div className="main">
       <div className={className}>
-        <p className="main__banner-temperature">Temp Today = {temperature}</p>
+        <p className="main__banner-temperature">{temperature} F</p>
       </div>
-      <p className="main__items">here is where the cards go</p>
+      <p className="main__items">
+        Today is {temperature} F / You may want to wear:
+      </p>
     </div>
   );
 }
