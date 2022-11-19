@@ -76,6 +76,7 @@ const App = () => {
           // icon={weatherData.weatherIcon}
           className={weatherData.className}
           temperature={weatherData.temperature}
+          clothingItemArray={defaultClothingItems}
         />
 
         <Footer />

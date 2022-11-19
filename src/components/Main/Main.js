@@ -10,7 +10,8 @@ import clothingItems from '../../utils/clothingItems';
 // const cards = defaultClothingItems;
 const cards = clothingItems;
 
-function Main({ icon, className, temperature }) {
+function Main({ icon, className, temperature, clothingItemArray }) {
+  console.log('clothingItemArray=', clothingItemArray);
   return (
     <div className="main">
       <div className={className}>
@@ -19,7 +20,7 @@ function Main({ icon, className, temperature }) {
       <p className="main__items">
         Today is {temperature} F / You may want to wear:
       </p>
-      <ItemSection />
+      <ItemSection clothingItemArray={clothingItemArray} />
     </div>
   );
 }
