@@ -1,0 +1,31 @@
+.ItemContainer {
+    max-width: 250px;
+    height: 225px;
+    /* border:blue 2px dotted; */
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    margin: 25px 25px;
+}
+ 
+.ItemCard__image {
+    max-width: 200px;
+    height: 150px;
+    border: red 2px dotted;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top:10px;
+}
+.ItemCard__title {
+    color: blue;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+}
+
+.ItemCard__subtitle {
+    color: green;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+}

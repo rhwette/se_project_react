@@ -1,0 +1,10 @@
+.ItemSection {
+    color: black;
+    background-color: pink;
+    max-width: 980px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+}
+

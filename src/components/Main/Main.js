@@ -1,5 +1,7 @@
 import React from 'react';
 import './Main.css';
+import ItemSection from '../ItemSection/ItemSection';
+
 // import ItemCard from '../ItemCard/ItemCard';
 // import WeatherCard from '../WeatherCard/WeatherCard';
 
@@ -17,6 +19,7 @@ function Main({ icon, className, temperature }) {
       <p className="main__items">
         Today is {temperature} F / You may want to wear:
       </p>
+      <ItemSection />
     </div>
   );
 }

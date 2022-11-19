@@ -9,15 +9,21 @@
 //    you need to call the state change function 'handleCardClick()
 //    that ItemCard receives as a prop
 //
+
+import React from 'react';
+import './ItemCard.css';
+
 const src2 =
   'https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591';
 
 function ItemCard() {
   return (
     <>
-      <img src={src2} alt={'alternate'} />
-      <h2> {'this is the title'}</h2>
-      <p>{'this is the subtitle'}</p>
+      <div className="ItemContainer">
+        <h2 className="ItemCard__title"> {'this is the title'}</h2>
+        <img className="ItemCard__image" src={src2} alt={'alternate'} />
+        <p className="ItemCard__subtitle">{'this is the subtitle'}</p>
+      </div>
     </>
   );
 }
