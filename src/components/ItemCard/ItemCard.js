@@ -18,17 +18,14 @@ import './ItemCard.css';
 function ItemCard({ ItemCardData }) {
   console.log('ItemCardData=', ItemCardData);
   const src2 = ItemCardData.link;
-  // console.log('src2=', src2);
-  const alternate = ItemCardData.title;
+  const alternate = ItemCardData.name;
   const title = ItemCardData.name;
   console.log('title=', title);
-  const subtitle = ItemCardData.subtitle;
   return (
     <>
       <div className="ItemContainer">
         <h2 className="ItemCard__title"> {title}</h2>
         <img className="ItemCard__image" src={src2} alt={alternate} />
-        {/* <p className="ItemCard__subtitle">{subtitle}</p> */}
       </div>
     </>
   );

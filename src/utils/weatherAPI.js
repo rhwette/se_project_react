@@ -112,6 +112,7 @@ const filterDataFromWeatherAPI = (data) => {
   console.log('nighttime=', weather.nighttime);
   console.log('weatherIcon=', weather.weatherIcon);
   console.log('className=', weather.className);
+  console.log('weather.temperature=', weather.temperature);
 
   return weather;
 };

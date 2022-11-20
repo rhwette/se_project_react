@@ -1,7 +1,7 @@
 .ItemSection {
     color: black;
     background-color: white;
-    border: 2px purple solid;
+    /* border: 2px purple solid; */
     max-width: 1420px;
     display: flex;
     flex-wrap: wrap;
