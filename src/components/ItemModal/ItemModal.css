@@ -1,3 +1,14 @@
+.itemModal{
+    border:1px red solid;
+    max-width:280px;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+
+
+
+
 .modal__label {
 
 }

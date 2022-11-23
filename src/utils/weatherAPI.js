@@ -20,37 +20,37 @@ const getForecastWeather = ({ location }, ApiKey) => {
 // console.log('data=', data);
 
 const filterDataFromWeatherAPI = (data) => {
-  console.log('data=', data);
+  // console.log('data=', data);
   if (!data) {
     return null;
   }
   let weather = {};
   weather.daytime = 'false';
   weather.nighttime = 'false';
-  console.log('daytime=', weather.daytime);
-  console.log('nighttime=', weather.nighttime);
+  // console.log('daytime=', weather.daytime);
+  // console.log('nighttime=', weather.nighttime);
 
   const currentDate1 = new Date();
   const currentHour = currentDate1.getHours();
-  console.log('currentHour=', currentHour);
+  // console.log('currentHour=', currentHour);
 
   if (currentHour > 6 && currentHour < 18) {
     weather.daytime = 'true';
   } else {
     weather.nighttime = 'true';
   }
-  console.log('daytime=', weather.daytime);
-  console.log('nighttime=', weather.nighttime);
+  // console.log('daytime=', weather.daytime);
+  // console.log('nighttime=', weather.nighttime);
 
-  console.log('data=', data);
+  // console.log('data=', data);
 
   weather.city = data.name;
   weather.temperature = data.main.temp;
   weather.id = data.weather[0].id;
-  console.log('weather=', weather);
-  console.log('weather.city=', weather.city);
-  console.log('weather.temperature=', weather.temperature);
-  console.log('weather.id=', weather.id);
+  // console.log('weather=', weather);
+  // console.log('weather.city=', weather.city);
+  // console.log('weather.temperature=', weather.temperature);
+  // console.log('weather.id=', weather.id);
 
   function setDayWeather() {
     if (weather.id === 800) {
@@ -108,11 +108,11 @@ const filterDataFromWeatherAPI = (data) => {
     setNightWeather();
   }
 
-  console.log('daytime=', weather.daytime);
-  console.log('nighttime=', weather.nighttime);
-  console.log('weatherIcon=', weather.weatherIcon);
-  console.log('className=', weather.className);
-  console.log('weather.temperature=', weather.temperature);
+  // console.log('daytime=', weather.daytime);
+  // console.log('nighttime=', weather.nighttime);
+  // console.log('weatherIcon=', weather.weatherIcon);
+  // console.log('className=', weather.className);
+  // console.log('weather.temperature=', weather.temperature);
 
   return weather;
 };

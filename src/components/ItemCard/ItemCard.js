@@ -15,15 +15,21 @@ import './ItemCard.css';
 
 // 'https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591';
 
-function ItemCard({ ItemCardData }) {
+function ItemCard({ ItemCardData, onCardClick }) {
   console.log('ItemCardData=', ItemCardData);
   const src2 = ItemCardData.link;
   const alternate = ItemCardData.name;
   const title = ItemCardData.name;
-  console.log('title=', title);
+  // console.log('title=', title);
+
+  /////////
+  function handleClick() {
+    onCardClick(ItemCardData);
+  }
+
   return (
     <>
-      <div className="ItemContainer">
+      <div className="ItemContainer" onClick={handleClick}>
         <h2 className="ItemCard__title"> {title}</h2>
         <img className="ItemCard__image" src={src2} alt={alternate} />
       </div>

@@ -13,7 +13,13 @@ import { isCompositeComponent } from 'react-dom/test-utils';
 // const cards = defaultClothingItems;
 const cards = clothingItems;
 
-function Main({ icon, className, temperature, clothingItemArray }) {
+function Main({
+  icon,
+  className,
+  temperature,
+  clothingItemArray,
+  onCardClick,
+}) {
   const weatherType = () => {
     if (temperature >= 86) {
       return 'hot';
@@ -25,9 +31,9 @@ function Main({ icon, className, temperature, clothingItemArray }) {
   };
 
   const clothingType = weatherType();
-  console.log('clothingType=', clothingType);
+  // console.log('clothingType=', clothingType);
 
-  console.log('clothingItemArray=', clothingItemArray);
+  // console.log('clothingItemArray=', clothingItemArray);
   return (
     <div className="main">
       <div className={className}>
@@ -39,6 +45,7 @@ function Main({ icon, className, temperature, clothingItemArray }) {
       <ItemSection
         clothingItemArray={clothingItemArray}
         clothingType={clothingType}
+        onCardClick={onCardClick}
       />
     </div>
   );

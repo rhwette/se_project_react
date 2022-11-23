@@ -2,9 +2,9 @@ import React from 'react';
 import './ItemSection.css';
 import ItemCard from '../ItemCard/ItemCard';
 
-function ItemSection({ clothingItemArray, clothingType }) {
-  console.log('clothingItemArray=', clothingItemArray);
-  console.log('clothingType=', clothingType);
+function ItemSection({ clothingItemArray, clothingType, onCardClick }) {
+  // console.log('clothingItemArray=', clothingItemArray);
+  // console.log('clothingType=', clothingType);
 
   // return (
   //   <div>
@@ -19,7 +19,11 @@ function ItemSection({ clothingItemArray, clothingType }) {
       {clothingItemArray
         .filter((ItemCardData) => ItemCardData.weather === clothingType)
         .map((filteredItem, index) => (
-          <ItemCard ItemCardData={filteredItem} key={index} />
+          <ItemCard
+            ItemCardData={filteredItem}
+            key={index}
+            onCardClick={onCardClick}
+          />
         ))}
 
       {/* <ItemCard className="ItemCard" />

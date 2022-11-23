@@ -4,9 +4,10 @@ import Header from '../Header/Header';
 // import Button from '../Button/Button';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
-import ModalWithForm from '../ModalWithForm/ModalWithForm';
-// import ItemCard from '../ItemCard/ItemCard';
+import ItemSection from '../ItemSection/ItemSection';
+import ItemCard from '../ItemCard/ItemCard';
 import ItemModal from '../ItemModal/ItemModal';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
 import { getForecastWeather } from '../../utils/weatherApi';
 import { filterDataFromWeatherAPI } from '../../utils/weatherApi';
@@ -17,9 +18,10 @@ const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState({});
   const [activeModal, setActiveModal] = useState();
-  const [selectedCard, setSelectedCard] = React.useState(null);
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   const handleCardClick = (card) => {
+    console.log('card=', card);
     setSelectedCard(card);
     setActiveModal('preview');
   };
@@ -38,23 +40,23 @@ const App = () => {
     if (location.latitude && location.longitude) {
       getForecastWeather({ location }, ApiKey)
         .then((data) => {
-          console.log('APP JS data=', data);
+          // console.log('APP JS data=', data);
           const weather = {};
           weather.city = data.name;
           weather.temperature = data.main.temp;
           weather.id = data.weather[0].id;
-          console.log('weather=', weather);
-          console.log('weather.city=', weather.city);
-          console.log('weather.temperature=', weather.temperature);
-          console.log('weather.id=', weather.id);
-          console.log('currentDate', currentDate);
+          // console.log('weather=', weather);
+          // console.log('weather.city=', weather.city);
+          // console.log('weather.temperature=', weather.temperature);
+          // console.log('weather.id=', weather.id);
+          // console.log('currentDate', currentDate);
           // console.log('currentHour', currentHour);
           setWeatherData(filterDataFromWeatherAPI(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
-  console.log('location.latitude=', location.latitude);
+  // console.log('location.latitude=', location.latitude);
 
   React.useEffect(() => {
     setClothingItems(defaultClothingItems);
@@ -77,7 +79,9 @@ const App = () => {
           className={weatherData.className}
           temperature={weatherData.temperature}
           clothingItemArray={defaultClothingItems}
+          onCardClick={handleCardClick}
         />
+        {/* {activeModal === 'preview' && <div> ItemPopup</div>} */}
 
         <Footer />
       </div>
