@@ -9,7 +9,13 @@ import React from 'react';
 import './ItemModal.css';
 
 function ItemModal({ card, onClose }) {
-  return <p className="itemModal"> Hello3</p>;
+  return (
+    <div className="ItemModal">
+      <p className="ItemModal-text"> Hello3</p>
+    </div>
+  );
+
+  // return;
 }
 
 export default ItemModal;
