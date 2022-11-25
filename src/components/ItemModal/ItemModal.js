@@ -14,7 +14,6 @@ function ItemModal({ card, onClose }) {
       {/* <div className="ItemModal-popupContainer"> */}
       <div className="ItemModal">
         <p className="ItemModal-text">
-          {' '}
           need to move this to middle-center4 of page
         </p>
       </div>

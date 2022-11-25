@@ -5,8 +5,8 @@
     left:0;
     width:100%;
     height:100%;
-    background-color: rgb(0,0,0);
-    z-index:1;
+    background-color: rgba(0,0,0,.2);
+    z-index:0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,9 +15,36 @@
     /* visibility: hidden; */
     /* visibility:  visible; */
     /* opacity: 0; */
-    opacity:0.2;
+    /* opacity:1; */
     /* opacity: 1; */
     /* transition: visibility 0s linear 0.3s, opacity 0.3s linear; */
+}
+
+.ItemModal{
+    background-color: white;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position:center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border:4px red solid;
+    max-width:280px;
+    font-size: 24px;
+    margin: 0 auto;
+    padding:0;
+    z-index: 4;
+    font-size: 24px;
+    color:black;
+    /* opacity:0.9; */
+
+}
+
+.ItemModal-text{
+    font-size: 24px;
+    /* color: green; */
+    color: black;
+
 }
 
 /* .ItemModal-popupContainer {
@@ -53,31 +80,11 @@
 
 
 
-.ItemModal{
-    position: relative;
-    background-repeat: no-repeat;
-    background-position:center;
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    border:1px red solid;
-    max-width:280px;
-    font-size: 24px;
-    margin: 0 auto;
-    padding:0;
-    z-index: 10;
-    font-size: 24px;
-    color:black;
-
-}
 
 
 
-.ItemModal-text{
-    font-size: 24px;
-    color: green;
 
-}
+
 
 
 
