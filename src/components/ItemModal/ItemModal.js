@@ -10,8 +10,15 @@ import './ItemModal.css';
 
 function ItemModal({ card, onClose }) {
   return (
-    <div className="ItemModal">
-      <p className="ItemModal-text"> Hello3</p>
+    <div className="ItemModal-popup">
+      {/* <div className="ItemModal-popupContainer"> */}
+      <div className="ItemModal">
+        <p className="ItemModal-text">
+          {' '}
+          need to move this to middle-center4 of page
+        </p>
+      </div>
+      {/* </div> */}
     </div>
   );
 
