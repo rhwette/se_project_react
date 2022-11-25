@@ -47,6 +47,11 @@
 
 }
 
+.ItemModal-image {
+    width:200px;
+    height:200px;
+}
+
 /* .ItemModal-popupContainer {
     position: relative;
     font-family: Arial, sans-serif;

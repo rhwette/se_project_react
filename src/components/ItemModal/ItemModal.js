@@ -9,19 +9,21 @@ import React from 'react';
 import './ItemModal.css';
 
 function ItemModal({ card, onClose }) {
+  const src2 = card.link;
+  const alternate = card.name;
+  const title = card.name;
+  const weather = card.weather;
+  console.log('card=', card);
+  console.log('card.weather=', card.weather);
   return (
     <div className="ItemModal-popup">
-      {/* <div className="ItemModal-popupContainer"> */}
       <div className="ItemModal">
-        <p className="ItemModal-text">
-          need to move this to middle-center4 of page
-        </p>
+        <h2 className="ItemModal-text"> {title}</h2>
+        <p className="ItemModal-text">weather = {weather}</p>
+        <img className="ItemModal-image" src={src2} alt={alternate} />
       </div>
-      {/* </div> */}
     </div>
   );
-
-  // return;
 }
 
 export default ItemModal;
