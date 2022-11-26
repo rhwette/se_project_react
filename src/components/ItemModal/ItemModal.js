@@ -14,8 +14,8 @@ function ItemModal({ card, onClose }) {
   const alternate = card.name;
   const title = card.name;
   const weather = card.weather;
-  console.log('card=', card);
-  console.log('card.weather=', card.weather);
+  // console.log('card=', card);
+  // console.log('card.weather=', card.weather);
   return (
     <div className="ItemModal-popup">
       <div className="ItemModal">
@@ -23,7 +23,7 @@ function ItemModal({ card, onClose }) {
           className="ItemModal-close"
           onClick={onClose}
           src={closeX}
-          alt="help"
+          alt="close"
         />
         <img className="ItemModal-image" src={src2} alt={alternate} />
         <p className="ItemModal-textItem"> {title}</p>

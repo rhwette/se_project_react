@@ -9,7 +9,7 @@ import ItemSection from '../ItemSection/ItemSection';
 
 // import defaultClothingItems from '../../utils/clothingItems';
 import clothingItems from '../../utils/clothingItems';
-import { isCompositeComponent } from 'react-dom/test-utils';
+// import { isCompositeComponent } from 'react-dom/test-utils';
 // const cards = defaultClothingItems;
 const cards = clothingItems;
 

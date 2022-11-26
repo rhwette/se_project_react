@@ -35,3 +35,29 @@
 //    1)the ESCAPE key
 
 // create an "add clothes button" that opens the ModalWithForm Button
+
+import React from 'react';
+import './ModalWithForm.css';
+import closeX from '../../images/close.svg';
+
+function ModalWithForm({ title, name, onClose }) {
+  // console.log('card=', card);
+  // console.log('card.weather=', card.weather);
+
+  return (
+    <div className="ModalWithForm-popup">
+      <div className="ModalWithForm">
+        <img
+          className="ModalWithForm-close"
+          //   onClick={onClose}
+          src={closeX}
+          alt="close"
+        />
+        {/* <img className="ItemModal-image" src={src2} alt={alternate} /> */}
+        {/* <p className="ModalWithForm-textItem"> {title}</p> */}
+      </div>
+    </div>
+  );
+}
+
+export default ModalWithForm;
