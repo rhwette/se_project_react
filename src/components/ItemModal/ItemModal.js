@@ -18,9 +18,9 @@ function ItemModal({ card, onClose }) {
   return (
     <div className="ItemModal-popup">
       <div className="ItemModal">
-        <h2 className="ItemModal-text"> {title}</h2>
-        <p className="ItemModal-text">weather = {weather}</p>
         <img className="ItemModal-image" src={src2} alt={alternate} />
+        <p className="ItemModal-textItem"> {title}</p>
+        <p className="ItemModal-textWeather">Weather: {weather}</p>
       </div>
     </div>
   );

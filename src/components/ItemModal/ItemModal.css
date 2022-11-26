@@ -5,7 +5,7 @@
     left:0;
     width:100%;
     height:100%;
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0,0,0,.3);
     z-index:0;
     display: flex;
     flex-direction: column;
@@ -22,34 +22,47 @@
 
 .ItemModal{
     background-color: white;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position:center;
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    border:4px red solid;
-    max-width:280px;
-    font-size: 24px;
+    /* position: relative; */
+    position: absolute;
+    /* background-repeat: no-repeat; */
+    /* background-position:center; */
+    top:106px;
+    left:471px;
+    width: 498px;
+    height: 610px;
+    border-radius: 16px;
+    /* border:4px red solid; */
+    /* max-width:280px; */
     margin: 0 auto;
     padding:0;
     z-index: 4;
-    font-size: 24px;
-    color:black;
+    /* font-size: 20px; */
+    /* color:black; */
     /* opacity:0.9; */
 
 }
 
-.ItemModal-text{
-    font-size: 24px;
+.ItemModal-textItem{
+    font-size: 20px;
     /* color: green; */
     color: black;
+    margin:20px 0px 12px 32px;
+    line-height:24px;
+}
 
+.ItemModal-textWeather{
+    font-size: 20px;
+    /* color: green; */
+    color: black;
+    margin:0px 0px 32px 32px;
+    line-height:24px;
 }
 
 .ItemModal-image {
-    width:200px;
-    height:200px;
+    width:498px;
+    height:498px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 /* .ItemModal-popupContainer {
