@@ -74,10 +74,8 @@ const App = () => {
           currentDate={currentDate}
           city={weatherData.city}
           name={'Elise Bower'}
-          onAddClick={handleAddCardClick}
-          clickHandler={() => {
-            console.log('you clicked me once');
-          }}
+          // onAddClick={handleAddCardClick}
+          clickHandler={handleAddCardClick}
           // avatar={}
         />
         <Main
