@@ -26,6 +26,11 @@ const App = () => {
     setActiveModal('preview');
   };
 
+  const handleAddCardClick = () => {
+    console.log('clicked on add clothes button');
+    setActiveModal('create');
+  };
+
   const currentDate = new Date().toLocaleString('default', {
     month: 'long',
     day: 'numeric',
@@ -69,6 +74,7 @@ const App = () => {
           currentDate={currentDate}
           city={weatherData.city}
           name={'Elise Bower'}
+          onAddClick={handleAddCardClick}
           clickHandler={() => {
             console.log('you clicked me once');
           }}
@@ -85,7 +91,7 @@ const App = () => {
 
         <Footer />
       </div>
-      {activeModal != 'create' && (
+      {activeModal === 'create' && (
         <ModalWithForm
           title="New garment"
           name="new-card"

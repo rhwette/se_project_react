@@ -40,7 +40,7 @@ import React from 'react';
 import './ModalWithForm.css';
 import closeX from '../../images/close.svg';
 
-function ModalWithForm({ title, name, onClose }) {
+function ModalWithForm({ title, name, onClose, onAddClick }) {
   // console.log('card=', card);
   // console.log('card.weather=', card.weather);
 
@@ -50,7 +50,7 @@ function ModalWithForm({ title, name, onClose }) {
         <h2>{title}</h2>
         <img
           className="ModalWithForm-close"
-          //   onClick={onClose}
+          onClick={onClose}
           src={closeX}
           alt="close"
         />
