@@ -47,7 +47,7 @@ function ModalWithForm({ title, name, onClose, onAddClick }) {
   return (
     <div className="ModalWithForm-popup">
       <div className="ModalWithForm">
-        <h2>{title}</h2>
+        <p className="ModalWithForm-heading">{title}</p>
         <img
           className="ModalWithForm-close"
           onClick={onClose}
@@ -55,31 +55,33 @@ function ModalWithForm({ title, name, onClose, onAddClick }) {
           alt="close"
         />
         {/* <p>{name}</p> */}
-        <label className="modal__label">
+        <p className="ModalWithForm-heading">Name</p>
+        <label className="ModalWithForm-label">
           <input
             type="text"
             name="name"
             id="place-name"
-            className="modal__input modal__input_type_card-name"
-            placeholder="Title"
+            className="ModalWithForm-input modal__input_type_card-name"
+            placeholder="Name"
             required
             minLength="1"
             maxLength="30"
           />
           <span className="modal__error" id="place-name-error"></span>
         </label>
-        <label className="modal__label">
+        <p className="ModalWithForm-heading">Image</p>
+        <label className="ModalWithForm-label">
           <input
             type="url"
             name="link"
             id="place-link"
-            className="modal__input modal__input_type_url"
+            className="ModalWithForm-input modal__input_type_url"
             placeholder="Image URL"
             required
           />
           <span className="modal__error" id="place-link-error"></span>
         </label>
-        <p>Select the weather type:</p>
+        <p className="ModalWithForm-heading">Select the weather type:</p>
         <div className="modal__input modal__input_type_radio">
           <div>
             <input type="radio" id="choiceHot" name="weatherType" value="hot" />
@@ -110,6 +112,9 @@ function ModalWithForm({ title, name, onClose, onAddClick }) {
             </label>
           </div>
         </div>
+        <button className="ModalWithForm-button" type="submit">
+          Add Garment
+        </button>
         {/* <p> {placeholder}</p> */}
         {/* <img className="ItemModal-image" src={src2} alt={alternate} /> */}
         {/* <p className="ModalWithForm-textItem"> {title}</p> */}

@@ -22,15 +22,15 @@
     /* background-position:center; */
     top:106px;
     left:471px;
-    width: 498px;
-    height: 610px;
+    width: 496px;
+    height: 436px;
     border-radius: 16px;
     /* border:4px red solid; */
     /* max-width:280px; */
     margin: 0 auto;
     padding:0;
     z-index: 4;
-    /* font-size: 20px; */
+    font-size: 16px;
     /* color:black; */
     /* opacity:0.9; */
 
@@ -47,4 +47,39 @@
 
 .ModelWithForm-close:hover {
     cursor:pointer;
+}
+
+.ModalWithForm-label {
+    font-size:16px;
+}
+
+.ModalWithForm-heading {
+font-weight: 700;
+margin-left: 28px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.ModalWithForm-input {
+    border: none;
+    border-bottom: 1px solid #000000; 
+    width: 440px;
+    margin-left: 28px;
+}
+
+.ModalWithForm-button {
+    background-color: rgba(0,0,0,.3);
+    color: #ffffff;
+    width: 124px;
+    height: 36px;
+    border: none;
+    border-radius:4px;
+}
+
+.modal__label_radio {
+    margin-left: 28px;
+    color: rgba(0,0,0,.5)
+}
+
+.modal__label_radio:checked:after {
+    color: #000000;
 }
