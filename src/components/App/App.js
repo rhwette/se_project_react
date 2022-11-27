@@ -85,13 +85,13 @@ const App = () => {
 
         <Footer />
       </div>
-      {activeModal === 'create' && (
+      {activeModal != 'create' && (
         <ModalWithForm
           title="New garment"
           name="new-card"
           onClose={closeAllModals}
         >
-          <label className="modal__label">
+          {/* <label className="modal__label">
             <input
               type="text"
               name="name"
@@ -150,7 +150,7 @@ const App = () => {
                 Cold
               </label>
             </div>
-          </div>
+          </div> */}
         </ModalWithForm>
       )}
       {activeModal === 'preview' && (
