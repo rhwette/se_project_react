@@ -82,7 +82,8 @@ function ModalWithForm({ title, name, onClose, onAddClick }) {
           <span className="modal__error" id="place-link-error"></span>
         </label>
         <p className="ModalWithForm-heading">Select the weather type:</p>
-        <div className="modal__input modal__input_type_radio">
+        {/* <div className="modal__input modal__input_type_radio"> */}
+        <div className="ModalWithForm-input modal__input_type_radio">
           <div>
             <input type="radio" id="choiceHot" name="weatherType" value="hot" />
             <label className="modal__label_radio" htmlFor="choiceHot">

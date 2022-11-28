@@ -103,6 +103,7 @@
     flex-direction: row;
     align-items: center;
     border: none;
+    cursor:pointer;
   }
  
     .header__avatar {
