@@ -22,13 +22,15 @@
 
 .ItemModal{
     background-color: white;
-    /* position: relative; */
-    position: absolute;
+    /* position:fixed; */
+    /* position: absolute; */
+    position:relative;
     /* background-repeat: no-repeat; */
     /* background-position:center; */
-    top:106px;
-    left:471px;
-    width: 498px;
+    /* top:106px; */
+    /* left:471px; */
+    /* width: 498px; */
+    max-width:498px;
     height: 610px;
     border-radius: 16px;
     /* border:4px red solid; */
@@ -41,6 +43,21 @@
     /* opacity:0.9; */
 
 }
+
+
+@media screen and (max-width:650px) {
+    .ItemModal {
+        max-width: 398px;
+        height:498px;
+    }
+    }
+
+@media screen and (max-width:400px) {
+    .ItemModal {
+        max-width: 298px;
+        height:498px;
+    }
+    }
 
 .ItemModal-textItem{
     font-size: 20px;
@@ -65,6 +82,20 @@
     border-top-right-radius: 16px;
 }
 
+@media screen and (max-width:650px) {
+    .ItemModal-image {
+        max-width: 398px;
+        height:398px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .ItemModal-image {
+        max-width: 298px;
+        height:358px;
+    }
+    }
+
 .ItemModal-close {
     position: absolute;
     top:27px;
@@ -74,6 +105,19 @@
     /* border:2px red solid; */
     color: black;
 }
+
+@media screen and (max-width:650px) {
+.ItemModal-close {
+    left:350px;
+    }
+    }
+
+ @media screen and (max-width:400px) {
+    .ItemModal-close {
+        left:260px;
+        /* background-color: red; */
+        }
+        }
 
 .ItemModal-close:hover {
     cursor:pointer;
