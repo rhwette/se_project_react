@@ -1,6 +1,3 @@
-/// clothing items should appear in the state
-//    upon mounting the App component
-
 const defaultClothingItems = [
   {
     _id: 0,

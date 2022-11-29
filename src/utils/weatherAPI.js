@@ -1,7 +1,5 @@
 import { location } from './constants';
 
-// const location = { latitude: '42.809', longitude: '-70.876' };
-// const location = { latitude: '29.78', longitude: '-95.82' };
 const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
 const parsedLocation = `${location.latitude}, ${location.longitude}`;
 
@@ -17,40 +15,26 @@ const getForecastWeather = ({ location }, ApiKey) => {
   });
 };
 
-// console.log('data=', data);
-
 const filterDataFromWeatherAPI = (data) => {
-  // console.log('data=', data);
   if (!data) {
     return null;
   }
   let weather = {};
   weather.daytime = 'false';
   weather.nighttime = 'false';
-  // console.log('daytime=', weather.daytime);
-  // console.log('nighttime=', weather.nighttime);
 
   const currentDate1 = new Date();
   const currentHour = currentDate1.getHours();
-  // console.log('currentHour=', currentHour);
 
   if (currentHour > 6 && currentHour < 18) {
     weather.daytime = 'true';
   } else {
     weather.nighttime = 'true';
   }
-  // console.log('daytime=', weather.daytime);
-  // console.log('nighttime=', weather.nighttime);
-
-  // console.log('data=', data);
 
   weather.city = data.name;
   weather.temperature = data.main.temp;
   weather.id = data.weather[0].id;
-  // console.log('weather=', weather);
-  // console.log('weather.city=', weather.city);
-  // console.log('weather.temperature=', weather.temperature);
-  // console.log('weather.id=', weather.id);
 
   function setDayWeather() {
     if (weather.id === 800) {
@@ -107,12 +91,6 @@ const filterDataFromWeatherAPI = (data) => {
   } else {
     setNightWeather();
   }
-
-  // console.log('daytime=', weather.daytime);
-  // console.log('nighttime=', weather.nighttime);
-  // console.log('weatherIcon=', weather.weatherIcon);
-  // console.log('className=', weather.className);
-  // console.log('weather.temperature=', weather.temperature);
 
   return weather;
 };

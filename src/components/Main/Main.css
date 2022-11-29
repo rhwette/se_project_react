@@ -1,8 +1,6 @@
 .main {
     max-width: 1400px;
     margin: 0 auto;
-    /* background-color: pink; */
-
 }
 
 .main__banner-daySunny {
@@ -122,38 +120,11 @@
 @media screen and (max-width:650px) {
 .main__banner-temperature {
     font-size: 24px;
-    /* margin-left: 10px; */
-    /* max-width: 200px; */
 }
 }
-
-
-
-  
-
 
 .main__items {
     font-size: 24px;
     margin-left: 10px;
-}
-
-.main__clothes {
-
-}
-
-.main__info {
-
-}
-
-.main__description {
-
-}
-
-.main__description-container {
-
-}
-
-.main__description_slash {
-
 }
 

@@ -5,7 +5,6 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    /* border:5px dashed green; */
     max-width: 860px;
     margin: 20px auto 20px auto;
   }

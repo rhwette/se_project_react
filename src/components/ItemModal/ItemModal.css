@@ -12,38 +12,18 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    /* visibility: hidden; */
-    /* visibility:  visible; */
-    /* opacity: 0; */
-    /* opacity:1; */
-    /* opacity: 1; */
-    /* transition: visibility 0s linear 0.3s, opacity 0.3s linear; */
 }
 
 .ItemModal{
     background-color: white;
-    /* position:fixed; */
-    /* position: absolute; */
     position:relative;
-    /* background-repeat: no-repeat; */
-    /* background-position:center; */
-    /* top:106px; */
-    /* left:471px; */
-    /* width: 498px; */
     max-width:498px;
     height: 610px;
     border-radius: 16px;
-    /* border:4px red solid; */
-    /* max-width:280px; */
     margin: 0 auto;
     padding:0;
     z-index: 4;
-    /* font-size: 20px; */
-    /* color:black; */
-    /* opacity:0.9; */
-
 }
-
 
 @media screen and (max-width:650px) {
     .ItemModal {
@@ -61,7 +41,6 @@
 
 .ItemModal-textItem{
     font-size: 20px;
-    /* color: green; */
     color: black;
     margin:20px 0px 12px 32px;
     line-height:24px;
@@ -69,7 +48,6 @@
 
 .ItemModal-textWeather{
     font-size: 20px;
-    /* color: green; */
     color: black;
     margin:0px 0px 32px 32px;
     line-height:24px;
@@ -102,7 +80,6 @@
     left:450px;
     width:14px;
     height:14px;
-    /* border:2px red solid; */
     color: black;
 }
 
@@ -115,53 +92,9 @@
  @media screen and (max-width:400px) {
     .ItemModal-close {
         left:260px;
-        /* background-color: red; */
         }
         }
 
 .ItemModal-close:hover {
     cursor:pointer;
 }
-
-/* .ItemModal-popupContainer {
-    position: relative;
-    font-family: Arial, sans-serif;
-    width: 100%;
-    max-width: 430px;
-    height:330px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 25px rgb(0,0,0,0.15);
-    list-style: none;
-    margin:0;
-    padding:0;
-} */
-
-
-
-
-
-/* .ItemModal-page {
-    width:100%;
-    max-width:1280px;
-    margin: 0 auto;
-    box-sizing: content-box;
-    background-color: #000000;
-    border: purple solid 5px;
-} */
-
-
-
-
-
-
-
-
-
-
-
-

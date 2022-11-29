@@ -1,16 +1,7 @@
 import React from 'react';
 import './Main.css';
 import ItemSection from '../ItemSection/ItemSection';
-// import { filterDataFromWeatherAPI } from '../../utils/weatherApi';
-// import { weather } from '../../utils/weatherApi';
-
-// import ItemCard from '../ItemCard/ItemCard';
-// import WeatherCard from '../WeatherCard/WeatherCard';
-
-// import defaultClothingItems from '../../utils/clothingItems';
 import clothingItems from '../../utils/clothingItems';
-// import { isCompositeComponent } from 'react-dom/test-utils';
-// const cards = defaultClothingItems;
 const cards = clothingItems;
 
 function Main({
@@ -31,9 +22,7 @@ function Main({
   };
 
   const clothingType = weatherType();
-  // console.log('clothingType=', clothingType);
 
-  // console.log('clothingItemArray=', clothingItemArray);
   return (
     <div className="main">
       <div className={className}>

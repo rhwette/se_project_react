@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Header.css';
 import logoPath from './wtwr°.jpg';
 import avatarPath from './avatar-default2.jpg';
-// import avatar-default from '../images/avatar-default.jpg';
 import {
   getForecastWeather,
   filterDataFromWeatherAPI,
