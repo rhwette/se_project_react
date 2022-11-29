@@ -20,13 +20,11 @@ const App = () => {
   const [selectedCard, setSelectedCard] = React.useState({});
 
   const handleCardClick = (card) => {
-    console.log('card=', card);
     setSelectedCard(card);
     setActiveModal('preview');
   };
 
   const handleAddCardClick = () => {
-    console.log('clicked on add clothes button');
     setActiveModal('create');
   };
 
