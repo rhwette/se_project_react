@@ -9,7 +9,7 @@ import ItemModal from '../ItemModal/ItemModal';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
 import { getForecastWeather } from '../../utils/weatherApi';
-import { filterDataFromWeatherAPI } from '../../utils/weatherApi';
+import { filterDataFromWeatherApi } from '../../utils/weatherApi';
 import defaultClothingItems from '../../utils/clothingItems';
 import { ApiKey } from '../../utils/constants';
 
@@ -48,7 +48,7 @@ const App = () => {
           weather.city = data.name;
           weather.temperature = data.main.temp;
           weather.id = data.weather[0].id;
-          setWeatherData(filterDataFromWeatherAPI(data));
+          setWeatherData(filterDataFromWeatherApi(data));
         })
         .catch((err) => console.log(err));
     }

@@ -15,7 +15,7 @@ const getForecastWeather = ({ location }, ApiKey) => {
   });
 };
 
-const filterDataFromWeatherAPI = (data) => {
+const filterDataFromWeatherApi = (data) => {
   if (!data) {
     return null;
   }
@@ -95,4 +95,4 @@ const filterDataFromWeatherAPI = (data) => {
   return weather;
 };
 
-export { getForecastWeather, filterDataFromWeatherAPI };
+export { getForecastWeather, filterDataFromWeatherApi };

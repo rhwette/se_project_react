@@ -4,7 +4,7 @@ import logoPath from './wtwr°.jpg';
 import avatarPath from './avatar-default2.jpg';
 import {
   getForecastWeather,
-  filterDataFromWeatherAPI,
+  filterDataFromWeatherApi,
 } from '../../utils/weatherApi';
 
 function Header({ currentDate, city, name, clickHandler }) {
