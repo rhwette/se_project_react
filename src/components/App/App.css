@@ -31,4 +31,43 @@
     height: 40vmin;
     pointer-events: none;
   }
+
+  .modal__label {
+
+  }
+
+
+  .modal__input {
+
+  }
+  
+  .modal__input_type_card-name{
+
+  }
+
+  .modal__error {
+
+  }
+
+  .modal-heading {
+
+  }
+
+  .modal__input_type_url {
+
+  }
+
+  .modal__input_type_radio {
+
+  }
+
+  .modal__label_radio {
+    margin-left: 8px;
+    color: rgba(0,0,0,.5)
+}
+
+/* .modal__label_radio:checked:after {
+    color: #000000;
+} */
+
   

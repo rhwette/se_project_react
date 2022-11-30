@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import '../ModalWithForm/ModalWithForm.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -16,7 +17,7 @@ import { ApiKey } from '../../utils/constants';
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState({});
-  const [activeModal, setActiveModal] = useState();
+  const [activeModal, setActiveModal] = useState('');
   const [selectedCard, setSelectedCard] = React.useState({});
 
   const handleCardClick = (card) => {
@@ -76,8 +77,11 @@ const App = () => {
       </div>
       {activeModal === 'create' && (
         <ModalWithForm
-          title="New garment"
-          name="new-card"
+          title={'New garment'}
+          name={'name'}
+          // formEntryTwo={'Image'}
+          // formEntryThree={'Select the weather type'}
+          buttonLabel={'Add garment'}
           onClose={closeAllModals}
         ></ModalWithForm>
       )}

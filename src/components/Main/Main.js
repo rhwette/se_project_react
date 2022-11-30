@@ -24,7 +24,7 @@ function Main({
   const clothingType = weatherType();
 
   return (
-    <div className="main">
+    <main className="main">
       <div className={className}>
         <p className="main__banner-temperature">{temperature} F</p>
       </div>
@@ -36,7 +36,7 @@ function Main({
         clothingType={clothingType}
         onCardClick={onCardClick}
       />
-    </div>
+    </main>
   );
 }
 export default Main;

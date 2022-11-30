@@ -2,10 +2,10 @@ import React from 'react';
 import './ModalWithForm.css';
 import closeX from '../../images/close.svg';
 
-function ModalWithForm({ title, name, onClose, onAddClick }) {
+function ModalWithForm({ title, onClose, onAddClick, buttonLabel }) {
   return (
     <div className="ModalWithForm-popup">
-      <div className="ModalWithForm">
+      <form className="ModalWithForm">
         <p className="ModalWithForm-heading">{title}</p>
         <img
           className="ModalWithForm-close"
@@ -39,7 +39,7 @@ function ModalWithForm({ title, name, onClose, onAddClick }) {
           />
           <span className="modal__error" id="place-link-error"></span>
         </label>
-        <p className="ModalWithForm-heading">Select the weather type:</p>
+        <p className="ModalWithForm-heading">select weather type</p>
         <div className="ModalWithForm-input modal__input_type_radio">
           <div>
             <input type="radio" id="choiceHot" name="weatherType" value="hot" />
@@ -71,9 +71,10 @@ function ModalWithForm({ title, name, onClose, onAddClick }) {
           </div>
         </div>
         <button className="ModalWithForm-button" type="submit">
-          Add Garment
+          {/* Add Garment */}
+          {buttonLabel}
         </button>
-      </div>
+      </form>
     </div>
   );
 }

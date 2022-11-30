@@ -8,10 +8,10 @@ function ItemSection({ clothingItemArray, clothingType, onCardClick }) {
     <div className="ItemSection">
       {clothingItemArray
         .filter((ItemCardData) => ItemCardData.weather === clothingType)
-        .map((filteredItem, index) => (
+        .map((filteredItem, _id) => (
           <ItemCard
             ItemCardData={filteredItem}
-            key={index}
+            key={_id}
             onCardClick={onCardClick}
           />
         ))}
