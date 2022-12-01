@@ -32,6 +32,27 @@
     pointer-events: none;
   }
 
+  .ModalWithForm-label {
+    font-size:16px;
+}
+
+.ModalWithForm-input {
+  border: none;
+  border-bottom: 1px solid #000000; 
+  width: 440px;
+  margin-left: 28px;
+  margin-right:50px;
+}
+
+.ModalWithForm-heading {
+  /* font-weight: 700; */
+  margin-left: 28px;
+  margin-top:24px;
+  margin-bottom: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:red;
+  }
+
   .modal__label {
 
   }

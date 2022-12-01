@@ -20,7 +20,8 @@
 .ModalWithForm{
     background-color: white;
     position: relative;
-    max-width: 496px;
+    /* max-width: 496px; */
+    width:496px;
     height: 416px;
     border-radius: 16px;
     margin: 0 auto;
@@ -43,19 +44,23 @@
             height:416px;
         }
         }
-
+        
         /* keep */
-.ModalWithForm-close {
-    position: absolute;
-    top:23px;
-    left:427px;
-    width:14px;
-    height:14px;
-    color: black;
-    margin:0;
-    background-color: red;
-}
-
+        .ModalWithForm-close {
+            position: absolute;
+            top:23px;
+            left:427px;
+            width:14px;
+            height:14px;
+            color: black;
+            margin:0;
+            background-color: red;
+        }
+        
+        .ModelWithForm-close:hover {
+            cursor:pointer;
+        }
+        
 @media screen and (max-width:650px) {
     .ModalWithForm-close {
         left:327px;
@@ -68,9 +73,6 @@
     }
  }
 
-.ModelWithForm-close:hover {
-    cursor:pointer;
-}
 
 .ModalWithForm-label {
     font-size:16px;
