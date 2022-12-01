@@ -6,42 +6,42 @@
     background-color: white;
     max-width: 860px;
     margin: 20px auto 20px auto;
-  }
+}
 
-  @media screen and (max-width:650px) {
-    .header {
-        max-width: 600px;
-        }
-        }
+@media screen and (max-width:650px) {
+  .header {
+    max-width: 600px;
+    }
+}
 
-   @media screen and (max-width:400px) {
-    .header {
-        max-width: 350px;
-        }
-        }
+@media screen and (max-width:400px) {
+  .header {
+    max-width: 350px;
+    }
+}
 
-  .header__containerLeft {
+.header__containerLeft {
     display: flex;
     flex-direction: row;
     width: 15%;
     margin-right: 20px;
-  }
+}
 
-  .header__containerCenter {
+.header__containerCenter {
     display: flex;
     flex-direction: row;
     width: 35%;
-  }
+}
 
-  .header__containerRight {
+.header__containerRight {
     display: flex;
     flex-direction: row;
     justify-content: right;
     width: 50%;
     background-color: white;
-  }
+}
 
-  .header__logo {
+.header__logo {
     display: flex;
     width: 89px;
     height: 25px;
@@ -49,36 +49,32 @@
     margin-left: 40px;
     margin-bottom: 28px;
     margin-right: 100px;
-
-  }
+}
   
-  .header__contentCenter {
+.header__contentCenter {
     color: black;
     margin-top: 40px;
     margin-left: 24px;
+}
 
-  }
-  .header__contentRight {
+.header__contentRight {
     color: black;
     display: flex;
     justify-content:right;
     margin: 0;
     margin-top: 40px;
     margin-left: 15px;
+}
 
-  }
-
-
-  .header__date2 {
+.header__date2 {
     color: black;
     display: flex;
     justify-content: flex-end;
     margin-top: 40px;
     margin-left: 240px;
+}
 
-  }
-
-  .header__button {
+.header__button {
     background-color:white;
     font-size: 12px;
     color: black;
@@ -92,9 +88,9 @@
     align-items: center;
     border: none;
     cursor:pointer;
-  }
+}
  
-    .header__avatar {
+.header__avatar {
       display: flex;
       width: 45px;
       height: 45px;
@@ -102,8 +98,7 @@
       margin-left: 40px;
       margin-bottom: 28px;
       margin-right: 24px;
-  
-    }
+}
 
   
 

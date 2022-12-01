@@ -11,12 +11,10 @@ function ItemCard({ ItemCardData, onCardClick }) {
   }
 
   return (
-    // <>
     <div className="ItemContainer" onClick={handleClick}>
       <h2 className="ItemCard__title"> {title}</h2>
       <img className="ItemCard__image" src={src2} alt={alternate} />
     </div>
-    // </>
   );
 }
 

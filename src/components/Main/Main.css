@@ -118,9 +118,9 @@
 }
 
 @media screen and (max-width:650px) {
-.main__banner-temperature {
+  .main__banner-temperature {
     font-size: 24px;
-}
+  }
 }
 
 .main__items {

@@ -3,8 +3,8 @@ import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
-import ItemSection from '../ItemSection/ItemSection';
-import ItemCard from '../ItemCard/ItemCard';
+// import ItemSection from '../ItemSection/ItemSection';
+// import ItemCard from '../ItemCard/ItemCard';
 import ItemModal from '../ItemModal/ItemModal';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
@@ -97,7 +97,6 @@ const App = () => {
           </label>
 
           {/* second child starts here */}
-          {/* <p className="ModalWithForm-heading">Image</p> */}
           <label htmlFor="place-link" className="ModalWithForm-heading">
             Image
             <input

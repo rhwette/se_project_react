@@ -30,23 +30,23 @@
         max-width: 398px;
         height:498px;
     }
-    }
+}
 
 @media screen and (max-width:400px) {
     .ItemModal {
         max-width: 298px;
         height:498px;
     }
-    }
+}
 
-.ItemModal-textItem{
+.ItemModal-textItem {
     font-size: 20px;
     color: black;
     margin:20px 0px 12px 32px;
     line-height:24px;
 }
 
-.ItemModal-textWeather{
+.ItemModal-textWeather {
     font-size: 20px;
     color: black;
     margin:0px 0px 32px 32px;
@@ -72,7 +72,7 @@
         max-width: 298px;
         height:358px;
     }
-    }
+}
 
 .ItemModal-close {
     position: absolute;
@@ -84,16 +84,16 @@
 }
 
 @media screen and (max-width:650px) {
-.ItemModal-close {
-    left:350px;
+    .ItemModal-close {
+        left:350px;
     }
-    }
+}
 
- @media screen and (max-width:400px) {
+@media screen and (max-width:400px) {
     .ItemModal-close {
         left:260px;
-        }
-        }
+    }
+}
 
 .ItemModal-close:hover {
     cursor:pointer;
