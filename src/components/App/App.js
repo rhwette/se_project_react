@@ -81,8 +81,10 @@ const App = () => {
           name={'namexxx'}
           buttonLabel={'Add garment'}
           onClose={closeAllModals}
+          // children={ModalWithForm.children}
         >
           {/* first child starts here */}
+          {/* <p className="ModalWithForm-heading">Namexcv</p> */}
           <label htmlFor="place" className="ModalWithForm-heading">
             Name
             {/* <label for="place-name" className="ModalWithForm-heading"> */}
@@ -103,8 +105,8 @@ const App = () => {
           </label>
 
           {/* second child starts here */}
-          {/* <p className="ModalWithForm-heading">Image</p> */}
-          <label className="ModalWithForm-label">
+          <p className="ModalWithForm-heading">Image</p>
+          <label htmlFor="place-link" className="ModalWithForm-label">
             <input
               type="url"
               name="link"

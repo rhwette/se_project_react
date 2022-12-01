@@ -1,15 +1,10 @@
-import React, { Children } from 'react';
+// import React, { Children } from 'react';
+import React from 'react';
 import './ModalWithForm.css';
 import closeX from '../../images/close.svg';
 
-function ModalWithForm({
-  title,
-  name,
-  onClose,
-  onAddClick,
-  buttonLabel,
-  children,
-}) {
+// function ModalWithForm({ title, name, buttonLabel, onClose, children }) {
+function ModalWithForm({ title, buttonLabel, onClose, children }) {
   return (
     <div className="ModalWithForm-popup">
       <form className="ModalWithForm">
@@ -20,7 +15,7 @@ function ModalWithForm({
           src={closeX}
           alt="close"
         />
-        <p className="ModalWithForm-heading">{name}</p>
+        {/* <p className="ModalWithForm-heading">{name}</p> */}
         {/* <p className="ModalWithForm-heading">Image123</p> */}
         {/* <p className="ModalWithForm-heading">select weather type</p> */}
 
@@ -83,7 +78,7 @@ function ModalWithForm({
         </div> */}
 
         {/* end here */}
-
+        {children}
         <button className="ModalWithForm-button" type="submit">
           {/* Add Garment */}
           {buttonLabel}
