@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-// import '../ModalWithForm/ModalWithForm.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -77,24 +76,17 @@ const App = () => {
       </div>
       {activeModal === 'create' && (
         <ModalWithForm
-          title={'New garmentxxx'}
-          name={'namexxx'}
+          title={'New garment'}
           buttonLabel={'Add garment'}
           onClose={closeAllModals}
-          // children={ModalWithForm.children}
         >
           {/* first child starts here */}
-          {/* <p className="ModalWithForm-heading">Namexcv</p> */}
-          <label htmlFor="place" className="ModalWithForm-heading">
+          <label htmlFor="place-name" className="ModalWithForm-heading">
             Name
-            {/* <label for="place-name" className="ModalWithForm-heading"> */}
-            {/* Namexxxxx */}
-            {/* </label> */}
-            {/* <p className="ModalWithForm-heading">Namexxx</p> */}
             <input
               type="text"
               name="name"
-              id="place"
+              id="place-name"
               className="ModalWithForm-input modal__input_type_card-name"
               placeholder="Name"
               required
@@ -105,8 +97,9 @@ const App = () => {
           </label>
 
           {/* second child starts here */}
-          <p className="ModalWithForm-heading">Image</p>
-          <label htmlFor="place-link" className="ModalWithForm-label">
+          {/* <p className="ModalWithForm-heading">Image</p> */}
+          <label htmlFor="place-link" className="ModalWithForm-heading">
+            Image
             <input
               type="url"
               name="link"
