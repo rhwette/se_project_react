@@ -4,6 +4,12 @@ import CurrentTempUnitContext from '../../contexts/CurrentTempUnitContext';
 
 //see @author [Shraddha](https://github.com/Shraddha)
 
+// <!-- Rounded switch -->
+{/* <label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label> */}
+
 const ToggleSwitch = () => {
   const { currentTempUnit, handleToggleSwitchChange } = useContext(
     CurrentTempUnitContext

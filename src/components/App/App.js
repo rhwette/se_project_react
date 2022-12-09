@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Route, Routes } from "react-router-dom';";
+import { Route, Routes } from 'react-router-dom';
 import CurrentTempUnitContext from '../../contexts/CurrentTempUnitContext';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -99,10 +99,10 @@ const App = () => {
 
   return (
     <div className="App">
-  {/* new */}
+      {/* new */}
       <CurrentTempUnitContext.Provider
         value={{ currentTempUnit, handleToggleSwitchChange }}
-      >
+      />
 
       <div className="App-content">
         <Header
@@ -113,26 +113,34 @@ const App = () => {
           // NEW  handleAddClick={() => setActiveModal("create")}
         />
         <Routes>
-          <Route exact path='/' element={
-            weatherData.tmeperture &&
-            <Main
-              className={weatherData.className}
-              temperature={weatherData.temperature}
-              clothingItemArray={defaultClothingItems}
-              onCardClick={handleCardClick}
-              onCardDelete={handleCardDelete}
+          <Route
+            exact
+            path="/"
+            element={
+              weatherData.tmeperture && (
+                <Main
+                  className={weatherData.className}
+                  temperature={weatherData.temperature}
+                  clothingItemArray={defaultClothingItems}
+                  onCardClick={handleCardClick}
+                  onCardDelete={handleCardDelete}
+                />
+              )
+            }
           />
-          }
-          />
-          <Route exact path='/profile' element={
-            clothingItems.length !== 0 &&
-            <Profile
-              cards={clothingItems}
-              onCardClick={handleCardClick}
-              onCardDelete={handleCardDelete}
-              onAddNewClick={() => setActiveModal("create")}
-            />
-          }
+          <Route
+            exact
+            path="/profile"
+            element={
+              clothingItems.length !== 0 && (
+                <Profile
+                  cards={clothingItems}
+                  onCardClick={handleCardClick}
+                  onCardDelete={handleCardDelete}
+                  onAddNewClick={() => setActiveModal('create')}
+                />
+              )
+            }
           />
         </Routes>
         <Footer />
