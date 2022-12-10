@@ -1,4 +1,3 @@
-//check 1851 video for more
 import React from 'react';
 import './Main.css';
 import ItemSection from '../ItemSection/ItemSection';
