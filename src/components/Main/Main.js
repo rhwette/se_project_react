@@ -2,6 +2,7 @@ import React from 'react';
 import './Main.css';
 import ItemSection from '../ItemSection/ItemSection';
 import clothingItems from '../../utils/clothingItems';
+import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 const cards = clothingItems;
 
 function Main({

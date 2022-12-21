@@ -11,13 +11,13 @@
 // const location = { latitude: '29.25', longitude: '-94.89' };
 
 //Lansing MI
-const location = { latitude: '42.72', longitude: '-84.52' };
+// const location = { latitude: '42.72', longitude: '-84.52' };
 
 //Holland MI
 // const location = { latitude: '42.77', longitude: '-86.11' };
 
 //Buffalo NY
-// const location = { latitude: '42.89', longitude: '-78.84' };
+const location = { latitude: '42.89', longitude: '-78.84' };
 
 //Limoges France
 // const location = { latitude: '45.83835', longitude: '1.24423' };
