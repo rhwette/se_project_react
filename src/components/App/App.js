@@ -8,7 +8,7 @@ import Main from '../Main/Main';
 import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer';
 // import ItemSection from '../ItemSection/ItemSection';
-// import ItemCtoggleard from '../ItemCard/ItemCard';
+// import ItemCard from '../ItemCard/ItemCard';
 // import AddItemModel from '../AddItemModal/AddItemModel';
 import ItemModal from '../ItemModal/ItemModal';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
@@ -24,7 +24,7 @@ import {
   handleServerResponse,
   removeItem,
 } from '../../utils/api';
-import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+// import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import Switch from '../Switch/Switch';
 const App = () => {
   // the initial state of state variables contains the correct data type
@@ -92,7 +92,8 @@ const App = () => {
     setActiveModal('');
   };
 
-  const handleToggleSwitchChange = () => {
+  // const handleToggleSwitchChange = () => {
+  const handleSwitchChange = () => {
     currentTemperatureUnit === 'F'
       ? setCurrentTemperatureUnit('C')
       : setCurrentTemperatureUnit('F');
@@ -148,7 +149,8 @@ const App = () => {
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
-        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+        // value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+        value={{ currentTemperatureUnit, handleSwitchChange }}
       >
         <div className="App-content">
           <Header
@@ -156,7 +158,7 @@ const App = () => {
             city={weatherData.city}
             name={'Elise Bower'}
             clickHandler={handleAddCardClick}
-            // toggleSwitch={ToggleSwitch}
+            // Switch={Switch}
           />
           <Main
             className={weatherData.className}

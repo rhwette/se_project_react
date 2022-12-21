@@ -6,7 +6,7 @@ import {
   getForecastWeather,
   filterDataFromWeatherApi,
 } from '../../utils/weatherApi';
-import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+// import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import Switch from '../Switch/Switch';
 
 function Header({ currentDate, city, name, clickHandler }) {
