@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useContext } from 'react';
 import './Header.css';
 import logoPath from '../../images/wtwr°.jpg';
 import avatarPath from '../../images/avatar-default2.jpg';
@@ -7,9 +7,11 @@ import {
   filterDataFromWeatherApi,
 } from '../../utils/weatherApi';
 import Switch from '../Switch/Switch';
+import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 
 function Header({ currentDate, city, name, clickHandler }) {
   const [value, setValue] = useState(false);
+  const contextValue = useContext(CurrentTemperatureUnitContext);
   return (
     <header className="header">
       <div className="header__containerLeft">
@@ -21,7 +23,13 @@ function Header({ currentDate, city, name, clickHandler }) {
         </p>
       </div>
       <div className="header__containerRight">
-        <Switch isOn={value} handleToggle={() => setValue(!value)} />
+        <Switch
+          isOn={value}
+          handleToggle={() => {
+            contextValue.handleSwitchChange();
+            setValue(!value);
+          }}
+        />
         <button onClick={clickHandler} className="header__button">
           + Add clothes
         </button>

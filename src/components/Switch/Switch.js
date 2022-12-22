@@ -10,7 +10,7 @@ const Switch = ({ isOn, handleToggle }) => {
 
   const [isChecked, setIsChecked] = useState(currentTemperatureUnit === 'C');
   useEffect(
-    () => setIsChecked(currentTemperatureUnit === 'CC'),
+    () => setIsChecked(currentTemperatureUnit === 'C'),
     [currentTemperatureUnit]
   );
   return (
@@ -24,11 +24,11 @@ const Switch = ({ isOn, handleToggle }) => {
         value={currentTemperatureUnit}
       />
       <label
-        style={{ background: isOn && '#06D6A0' }}
+        style={{ background: isOn && '#fff' }}
         className="react-switch-label"
         htmlFor={`react-switch-new`}
       >
-        <span className={`react-switch-button`} />
+        <span className={`react-switch-button`}>{currentTemperatureUnit} </span>
       </label>
     </>
   );
