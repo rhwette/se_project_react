@@ -25,10 +25,11 @@ const Switch = ({ isOn, handleToggle }) => {
       />
       <label
         style={{ background: isOn && '#fff' }}
-        className="react-switch-label"
+        className="react-switch-label react-switch-label-text"
         htmlFor={`react-switch-new`}
       >
-        <span className={`react-switch-button`}>{currentTemperatureUnit} </span>
+        <span className={'react-switch-label-text'}> {'F C'} </span>
+        <span className={'react-switch-button'}>{currentTemperatureUnit}</span>
       </label>
     </>
   );
