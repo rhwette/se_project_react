@@ -9,7 +9,7 @@ import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer';
 // import ItemSection from '../ItemSection/ItemSection';
 // import ItemCard from '../ItemCard/ItemCard';
-// import AddItemModel from '../AddItemModal/AddItemModel';
+// import AddItemModal from '../AddItemModal/AddItemModal';
 import ItemModal from '../ItemModal/ItemModal';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
@@ -24,50 +24,27 @@ import {
   handleServerResponse,
   removeItem,
 } from '../../utils/api';
-// import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import Switch from '../Switch/Switch';
 const App = () => {
   // the initial state of state variables contains the correct data type
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('CCC');
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState({});
   const [activeModal, setActiveModal] = useState('');
   const [selectedCard, setSelectedCard] = React.useState(null);
 
-  //////////////////////////////////////////////////////////
   // the App component makes an API request for the weather data (only once - on mounting)
 
   useEffect(() => {
     if (location.latitude && location.longitude) {
       getForecastWeather(location, ApiKey)
         .then((data) => {
-          //         const weather = {};
-          //         weather.city = data.name;
-          //         weather.temperature = data.main.temp;
-          //         weather.id = data.weather[0].id;
           setWeatherData(filterDataFromWeatherApi(data));
         })
         .catch((err) => console.log(err));
     }
   }, []);
 
-  // React.useEffect(() => {
-  //   if (location.latitude && location.longitude) {
-  //     getForecastWeather({ location }, ApiKey)
-  //       .then((data) => {
-  //         const weather = {};
-  //         weather.city = data.name;
-  //         weather.temperature = data.main.temp;
-  //         weather.id = data.weather[0].id;
-  //         setWeatherData(filterDataFromWeatherApi(data));
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  // }, []);
-
-  //////////////////////////////////////////////////////////
-
-  //////////////////////////////////////////////////////////
   // the App component saves default clothing items in the state
   useEffect(() => {
     getItemList()
@@ -76,12 +53,6 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-
-  // React.useEffect(() => {
-  //   setClothingItems(defaultClothingItems);
-  // }, []);
-
-  //////////////////////////////////////////////////////////
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -92,7 +63,6 @@ const App = () => {
     setActiveModal('');
   };
 
-  // const handleToggleSwitchChange = () => {
   const handleSwitchChange = () => {
     currentTemperatureUnit === 'F'
       ? setCurrentTemperatureUnit('C')
@@ -128,28 +98,9 @@ const App = () => {
     time: 'numeric',
   });
 
-  // React.useEffect(() => {
-  //   if (location.latitude && location.longitude) {
-  //     getForecastWeather({ location }, ApiKey)
-  //       .then((data) => {
-  //         const weather = {};
-  //         weather.city = data.name;
-  //         weather.temperature = data.main.temp;
-  //         weather.id = data.weather[0].id;
-  //         setWeatherData(filterDataFromWeatherApi(data));
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  // }, []);
-
-  // React.useEffect(() => {
-  //   setClothingItems(defaultClothingItems);
-  // }, []);
-
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
-        // value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         value={{ currentTemperatureUnit, handleSwitchChange }}
       >
         <div className="App-content">
@@ -158,7 +109,6 @@ const App = () => {
             city={weatherData.city}
             name={'Elise Bower'}
             clickHandler={handleAddCardClick}
-            // Switch={Switch}
           />
           <Main
             className={weatherData.className}
@@ -166,7 +116,6 @@ const App = () => {
             clothingItemArray={defaultClothingItems}
             onCardClick={handleCardClick}
           />
-
           <Footer />
         </div>
         {activeModal === 'create' && (

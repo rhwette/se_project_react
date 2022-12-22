@@ -6,7 +6,6 @@ import {
   getForecastWeather,
   filterDataFromWeatherApi,
 } from '../../utils/weatherApi';
-// import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import Switch from '../Switch/Switch';
 
 function Header({ currentDate, city, name, clickHandler }) {
@@ -22,30 +21,10 @@ function Header({ currentDate, city, name, clickHandler }) {
         </p>
       </div>
       <div className="header__containerRight">
-        {/* <ToggleSwitch /> */}
         <Switch isOn={value} handleToggle={() => setValue(!value)} />
         <button onClick={clickHandler} className="header__button">
           + Add clothes
         </button>
-
-        {/* <button
-          onClick={clickHandler}
-          className="switch switch-input slider slider:before"
-        ></button> */}
-        {/* <div className="custom-checkbox "> */}
-        {/* <div className="container ">
-          <input
-            className=" inputStatus"
-            className="input"
-            id="status"
-            type="checkbox"
-            name="status"
-          />
-          <label htmlFor="status">
-            <div className="input" data-unchecked="Off" data-checked="On"></div>
-            <div className="input"></div>
-          </label>
-        </div> */}
 
         <p className="header__contentRight"> {name}</p>
         <img src={avatarPath} alt="avatar" className="header__avatar" />
