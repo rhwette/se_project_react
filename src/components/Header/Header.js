@@ -6,7 +6,7 @@ import {
   getForecastWeather,
   filterDataFromWeatherApi,
 } from '../../utils/weatherApi';
-import Switch from '../Switch/Switch';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 
 function Header({ currentDate, city, name, clickHandler }) {
@@ -23,10 +23,10 @@ function Header({ currentDate, city, name, clickHandler }) {
         </p>
       </div>
       <div className="header__containerRight">
-        <Switch
+        <ToggleSwitch
           isOn={value}
           handleToggle={() => {
-            contextValue.handleSwitchChange();
+            contextValue.handleToggleSwitchChange();
             setValue(!value);
           }}
         />

@@ -1,36 +1,51 @@
-
-.switch {
+.react-toggleswitch-checkbox {
+    height:0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  .react-toggleswitch-label {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    cursor: pointer;
+    width: 45px;
+    height: 25px;
+    background: #fff;
+    border-radius: 100px;
     position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    border: blue solid 2px;
+    transition: background-color .2s;
+    margin-top: 30px;
+    border: grey 1px solid;
+    font-size: 14px;
   }
 
-.toggle-switch__label {
-  position: relative;
-  width:0px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: purple;
- transition: background-color .3s;
- cursor: pointer;
- z-index: 10;
- color: white;
-}
+  
+  .react-toggleswitch-label .react-toggleswitch-button {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 45px;
+    transition: 0.2s;
+    background: #000;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .react-toggleswitch-label-text{
+    color: #000;
+    padding-bottom: 1px;
+  }
 
-.toggle-switch__checkbox {
-  width:100px;
-  height: 100px;
-}
-
-.toggle-switch__checkbox_state_hidden {
-/* display:contents; */
-/* display: none; */
-}
-
-.toggle-switch__checkbox_state_visible {
-  /* display: visible; */
-}
-
-
+  .react-toggleswitch-checkbox:checked + .react-toggleswitch-label .react-toggleswitch-button {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+  
+  .react-toggleswitch-label:active .react-toggleswitch-button {
+    width: 20px;
+  }

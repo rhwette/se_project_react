@@ -24,7 +24,7 @@ import {
   handleServerResponse,
   removeItem,
 } from '../../utils/api';
-import Switch from '../Switch/Switch';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 const App = () => {
   // the initial state of state variables contains the correct data type
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
@@ -63,7 +63,7 @@ const App = () => {
     setActiveModal('');
   };
 
-  const handleSwitchChange = () => {
+  const handleToggleSwitchChange = () => {
     currentTemperatureUnit === 'F'
       ? setCurrentTemperatureUnit('C')
       : setCurrentTemperatureUnit('F');
@@ -101,7 +101,7 @@ const App = () => {
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
-        value={{ currentTemperatureUnit, handleSwitchChange }}
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="App-content">
           <Header
