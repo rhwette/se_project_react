@@ -1,4 +1,15 @@
-.sidebar {
+/* .sidebar {
     background-color: red;
 width: 20%;
+} */
+
+
+.sidebar__avatar {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 28px;
+    margin-right: 24px;
 }

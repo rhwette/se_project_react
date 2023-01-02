@@ -3,7 +3,7 @@ import './ClothesSection.css';
 import '../Profile.css';
 
 function ClothesSection() {
-  return <div className="clothes">console.log('inside ClothesSection');</div>;
+  return <div className="clothes">'ClothesSection 12345');</div>;
 }
 
 export default ClothesSection;

@@ -11,11 +11,13 @@
  .profile-sidebar {
     background-color: red;
 width: 25%;
+min-height: 300px;
 }
 
 .profile-clothes {
 background-color: green;
 width: 75%;
+min-height: 300px;
 }
 
 
