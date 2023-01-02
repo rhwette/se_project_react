@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 
 import Header from '../Header/Header';
@@ -97,7 +97,8 @@ const App = () => {
     day: 'numeric',
     time: 'numeric',
   });
-
+  console.log('BASE_URL=', BASE_URL);
+  console.log('weatherData.temperature=', weatherData.temperature);
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
@@ -110,12 +111,32 @@ const App = () => {
             name={'Elise Bower'}
             clickHandler={handleAddCardClick}
           />
-          <Main
-            className={weatherData.className}
-            temperature={weatherData.temperature}
-            clothingItemArray={defaultClothingItems}
-            onCardClick={handleCardClick}
-          />
+          <Router>
+            <Route
+              exact
+              path="/"
+              // path="http://localhost:3000"
+            >
+              {weatherData.temperature && (
+                <Main
+                  className={weatherData.className}
+                  temperature={weatherData.temperature}
+                  clothingItemArray={defaultClothingItems}
+                  onCardClick={handleCardClick}
+                />
+              )}
+            </Route>
+            <Route exact path="/profile">
+              {clothingItems.length !== 0 && (
+                <Profile
+                  cards={clothingItems}
+                  onCardClick={handleCardClick}
+                  onCardDelete={handleCardDelete}
+                  onAddNewClick={() => setActiveModal('create')}
+                />
+              )}
+            </Route>
+          </Router>
           <Footer />
         </div>
         {activeModal === 'create' && (

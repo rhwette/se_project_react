@@ -1,13 +1,21 @@
 .profile {
-
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    background-color: pink;
+    max-width: 860px;
+    margin: 20px auto 20px auto;
 }
 
-.profile-sidebar {
-
+ .profile-sidebar {
+    background-color: red;
+width: 25%;
 }
 
 .profile-clothes {
-
+background-color: green;
+width: 75%;
 }
 
 
