@@ -38,7 +38,9 @@ function Header({ currentDate, city, name, clickHandler }) {
         </button>
 
         <p className="header__contentRight"> {name}</p>
-        <img src={avatarPath} alt="avatar" className="header__avatar" />
+        <Link to="/profile">
+          <img src={avatarPath} alt="avatar" className="header__avatar" />
+        </Link>
       </div>
     </header>
   );

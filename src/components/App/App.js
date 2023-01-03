@@ -112,14 +112,7 @@ const App = () => {
               name={'Arlo'}
               clickHandler={handleAddCardClick}
             />
-            {/* <Link to="/">
-              <img src={logoPath} alt="logo" className="header__logo" />
-            </Link> */}
-            <Route
-              exact
-              path="/"
-              // path="http://localhost:3000"
-            >
+            <Route exact path="/">
               {weatherData.temperature && (
                 <Main
                   className={weatherData.className}
