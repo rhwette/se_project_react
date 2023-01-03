@@ -1,4 +1,5 @@
 import React, { Component, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import logoPath from '../../images/wtwr°.jpg';
 import avatarPath from '../../images/avatar-default2.jpg';
@@ -15,7 +16,9 @@ function Header({ currentDate, city, name, clickHandler }) {
   return (
     <header className="header">
       <div className="header__containerLeft">
-        <img src={logoPath} alt="logo" className="header__logo" />
+        <Link to="/">
+          <img src={logoPath} alt="logo" className="header__logo" />
+        </Link>
       </div>
       <div className="header__containerCenter">
         <p className="header__contentCenter">

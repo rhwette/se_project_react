@@ -4,6 +4,9 @@
 //   longitude: '-70.876',
 // };
 
+// 211 church st north adams Mass
+const location = { latitude: '42.69', longitude: '-73.11' };
+
 //Kty TX
 // const location = { latitude: '29.80', longitude: '-95.83' };
 //
@@ -17,7 +20,7 @@
 // const location = { latitude: '42.77', longitude: '-86.11' };
 
 //Buffalo NY
-const location = { latitude: '42.89', longitude: '-78.84' };
+// const location = { latitude: '42.89', longitude: '-78.84' };
 
 //Limoges France
 // const location = { latitude: '45.83835', longitude: '1.24423' };

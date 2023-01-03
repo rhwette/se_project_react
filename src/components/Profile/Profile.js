@@ -5,10 +5,17 @@ import './SideBar/SideBar.css';
 import ClothesSection from './ClothesSection/ClothesSection';
 import './ClothesSection/ClothesSection.css';
 
-const Profile = ({ cards, onCardClick, onCardDelete, onAddNewClick }) => (
+const Profile = ({
+  cards,
+  onCardClick,
+  onCardDelete,
+  onAddNewClick,
+  nameProfile,
+}) => (
   <div className="profile">
     <section className="profile-sidebar">
-      <SideBar />
+      {/* <SideBar /> */}
+      <SideBar nameProfile={nameProfile} />
     </section>
     <section className="profile-clothes">
       <ClothesSection

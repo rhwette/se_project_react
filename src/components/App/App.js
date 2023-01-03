@@ -105,13 +105,16 @@ const App = () => {
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="App-content">
-          <Header
-            currentDate={currentDate}
-            city={weatherData.city}
-            name={'Elise Bower'}
-            clickHandler={handleAddCardClick}
-          />
           <Router>
+            <Header
+              currentDate={currentDate}
+              city={weatherData.city}
+              name={'Arlo'}
+              clickHandler={handleAddCardClick}
+            />
+            {/* <Link to="/">
+              <img src={logoPath} alt="logo" className="header__logo" />
+            </Link> */}
             <Route
               exact
               path="/"
@@ -129,6 +132,7 @@ const App = () => {
             <Route exact path="/profile">
               {clothingItems.length !== 0 && (
                 <Profile
+                  nameProfile={'Frances'}
                   cards={clothingItems}
                   onCardClick={handleCardClick}
                   onCardDelete={handleCardDelete}
