@@ -88,8 +88,8 @@ const App = () => {
 
   const handleAddCardClick = (card) => {
     setSelectedCard(card);
-    // setActiveModal('create');
-    setActiveModal('preview');
+    setActiveModal('create');
+    // setActiveModal('preview');
   };
 
   const currentDate = new Date().toLocaleString('default', {

@@ -6,15 +6,14 @@ import ClothesSection from './ClothesSection/ClothesSection';
 import './ClothesSection/ClothesSection.css';
 
 const Profile = ({
+  nameProfile,
   cards,
   onCardClick,
   onCardDelete,
   onAddNewClick,
-  nameProfile,
 }) => (
   <div className="profile">
     <section className="profile-sidebar">
-      {/* <SideBar /> */}
       <SideBar nameProfile={nameProfile} />
     </section>
     <section className="profile-clothes">
