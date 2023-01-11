@@ -63,6 +63,20 @@ const App = () => {
     setActiveModal('');
   };
 
+  const modalFormAdd = (evt) => {
+    evt.preventDefault();
+    const placeInputValue = evt.target.querySelector('#place-name').value;
+    const placeInputLink = evt.target.querySelector('#place-link').value;
+    const placeInputWeather = evt.target.querySelector(
+      'input[name="weatherType"]:checked'
+    ).value;
+    // console.log('evt target', evt.target);
+    console.log('placeInputValue=', placeInputValue);
+    console.log('placeInputWeather=', placeInputWeather);
+    console.log('placeInputLink=', placeInputLink);
+    addItem({ placeInputValue, placeInputWeather, placeInputLink });
+  };
+
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === 'F'
       ? setCurrentTemperatureUnit('C')
@@ -141,6 +155,7 @@ const App = () => {
             title={'New garment'}
             buttonLabel={'Add garment'}
             onClose={closeAllModals}
+            onSubmit={modalFormAdd}
           >
             {/* first child starts here */}
             <label htmlFor="place-name" className="ModalWithForm-heading">
