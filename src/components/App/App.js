@@ -65,16 +65,16 @@ const App = () => {
 
   const modalFormAdd = (evt) => {
     evt.preventDefault();
-    const placeInputValue = evt.target.querySelector('#place-name').value;
-    const placeInputLink = evt.target.querySelector('#place-link').value;
-    const placeInputWeather = evt.target.querySelector(
+    const clothingInputValue = evt.target.querySelector('#clothing-name').value;
+    const clothingInputLink = evt.target.querySelector('#clothing-link').value;
+    const clothingInputWeather = evt.target.querySelector(
       'input[name="weatherType"]:checked'
     ).value;
     // console.log('evt target', evt.target);
-    console.log('placeInputValue=', placeInputValue);
-    console.log('placeInputWeather=', placeInputWeather);
-    console.log('placeInputLink=', placeInputLink);
-    addItem({ placeInputValue, placeInputWeather, placeInputLink });
+    console.log('clothingInputValue=', clothingInputValue);
+    console.log('clothingInputWeather=', clothingInputWeather);
+    console.log('clothingInputLink=', clothingInputLink);
+    addItem({ clothingInputValue, clothingInputWeather, clothingInputLink });
   };
 
   const handleToggleSwitchChange = () => {
@@ -158,33 +158,33 @@ const App = () => {
             onSubmit={modalFormAdd}
           >
             {/* first child starts here */}
-            <label htmlFor="place-name" className="ModalWithForm-heading">
+            <label htmlFor="clothing-name" className="ModalWithForm-heading">
               Name
               <input
                 type="text"
                 name="name"
-                id="place-name"
+                id="clothing-name"
                 className="ModalWithForm-input modal__input_type_card-name"
                 placeholder="Name"
                 required
                 minLength="1"
                 maxLength="30"
               />
-              <span className="modal__error" id="place-name-error"></span>
+              <span className="modal__error" id="clothing-name-error"></span>
             </label>
 
             {/* second child starts here */}
-            <label htmlFor="place-link" className="ModalWithForm-heading">
+            <label htmlFor="clothing-link" className="ModalWithForm-heading">
               Image
               <input
                 type="url"
                 name="link"
-                id="place-link"
+                id="clothing-link"
                 className="ModalWithForm-input modal__input_type_url"
                 placeholder="Image URL"
                 required
               />
-              <span className="modal__error" id="place-link-error"></span>
+              <span className="modal__error" id="clothing-link-error"></span>
             </label>
 
             {/* third child starts here */}
