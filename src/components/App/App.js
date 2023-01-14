@@ -65,16 +65,13 @@ const App = () => {
 
   const modalFormAdd = (evt) => {
     evt.preventDefault();
-    const clothingInputValue = evt.target.querySelector('#clothing-name').value;
-    const clothingInputLink = evt.target.querySelector('#clothing-link').value;
-    const clothingInputWeather = evt.target.querySelector(
+    const name = evt.target.querySelector('#clothing-name').value;
+    const imageUrl = evt.target.querySelector('#clothing-link').value;
+    const weather = evt.target.querySelector(
       'input[name="weatherType"]:checked'
     ).value;
-    // console.log('evt target', evt.target);
-    console.log('clothingInputValue=', clothingInputValue);
-    console.log('clothingInputWeather=', clothingInputWeather);
-    console.log('clothingInputLink=', clothingInputLink);
-    addItem({ clothingInputValue, clothingInputWeather, clothingInputLink });
+    addItem({ name, weather, imageUrl });
+    closeAllModals();
   };
 
   const handleToggleSwitchChange = () => {
@@ -154,8 +151,8 @@ const App = () => {
           <ModalWithForm
             title={'New garment'}
             buttonLabel={'Add garment'}
-            onClose={closeAllModals}
             onSubmit={modalFormAdd}
+            onClose={closeAllModals}
           >
             {/* first child starts here */}
             <label htmlFor="clothing-name" className="ModalWithForm-heading">

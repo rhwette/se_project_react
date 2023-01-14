@@ -1,9 +1,8 @@
-// export const BASE_URL = 'http://localhost:3000/se_project_react';
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://localhost:3001';
 
 export const handleServerResponse = (res) => {
-  console.log('res=', res);
-  console.log('res body json=', res.json());
+  // console.log('res=', res);
+  // console.log('res body json=', res.json());
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
@@ -16,6 +15,7 @@ export const getItemList = () => {
 };
 
 export const addItem = ({ name, weather, imageUrl }) => {
+  console.log('in addItem');
   return fetch(`${BASE_URL}/items`, {
     method: 'POST',
     headers: {
