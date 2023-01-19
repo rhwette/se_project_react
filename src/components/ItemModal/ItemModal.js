@@ -3,7 +3,7 @@ import './ItemModal.css';
 import closeX from '../../images/close.svg';
 
 function ItemModal({ card, onClose }) {
-  const src2 = card.link;
+  const src2 = card.imageUrl;
   const alternate = card.name;
   const title = card.name;
   const weather = card.weather;

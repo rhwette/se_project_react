@@ -2,7 +2,7 @@ import React from 'react';
 import './ItemCard.css';
 
 function ItemCard({ ItemCardData, onCardClick }) {
-  const src2 = ItemCardData.link;
+  const src2 = ItemCardData.imageUrl;
   const alternate = ItemCardData.name;
   const title = ItemCardData.name;
 

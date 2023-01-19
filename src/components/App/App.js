@@ -29,7 +29,7 @@ const App = () => {
   // the initial state of state variables contains the correct data type
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [weatherData, setWeatherData] = React.useState({});
-  const [clothingItems, setClothingItems] = React.useState({});
+  const [clothingItems, setClothingItems] = React.useState([]);
   const [activeModal, setActiveModal] = useState('');
   const [selectedCard, setSelectedCard] = React.useState(null);
 
@@ -50,6 +50,7 @@ const App = () => {
     getItemList()
       .then((items) => {
         setClothingItems(items);
+        console.log('items', items);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -57,6 +58,7 @@ const App = () => {
   const handleCardClick = (card) => {
     setSelectedCard(card);
     setActiveModal('preview');
+    // setActiveModal('create');
   };
 
   const closeAllModals = () => {
@@ -128,7 +130,7 @@ const App = () => {
                 <Main
                   className={weatherData.className}
                   temperature={weatherData.temperature}
-                  clothingItemArray={defaultClothingItems}
+                  clothingItemArray={clothingItems}
                   onCardClick={handleCardClick}
                 />
               )}
@@ -136,7 +138,7 @@ const App = () => {
             <Route exact path="/profile">
               {clothingItems.length !== 0 && (
                 <Profile
-                  nameProfile={'Frances'}
+                  nameProfile={'Arlo'}
                   cards={clothingItems}
                   onCardClick={handleCardClick}
                   onCardDelete={handleCardDelete}
