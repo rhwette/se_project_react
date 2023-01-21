@@ -1,4 +1,11 @@
-.clothes {
-    background-color: green;
-    width: 80%;
+.clothesSection {
+    color: black;
+    background-color: orange;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
     }
+
+ 

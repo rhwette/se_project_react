@@ -36,4 +36,5 @@ const location = { latitude: '42.69', longitude: '-73.11' };
 
 const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
 
-export { location, ApiKey };
+const nameOfPerson = 'Arlo W';
+export { location, ApiKey, nameOfPerson };

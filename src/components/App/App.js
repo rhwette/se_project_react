@@ -17,6 +17,7 @@ import { getForecastWeather } from '../../utils/weatherApi';
 import { filterDataFromWeatherApi } from '../../utils/weatherApi';
 import defaultClothingItems from '../../utils/clothingItems';
 import { ApiKey } from '../../utils/constants';
+import { nameOfPerson } from '../../utils/constants';
 import {
   BASE_URL,
   addItem,
@@ -67,12 +68,12 @@ const App = () => {
 
   const modalFormAdd = (evt) => {
     evt.preventDefault();
-    const name = evt.target.querySelector('#clothing-name').value;
+    const nameOfClothing = evt.target.querySelector('#clothing-name').value;
     const imageUrl = evt.target.querySelector('#clothing-link').value;
     const weather = evt.target.querySelector(
       'input[name="weatherType"]:checked'
     ).value;
-    addItem({ name, weather, imageUrl });
+    addItem({ nameOfClothing, weather, imageUrl });
     closeAllModals();
   };
 
@@ -122,7 +123,7 @@ const App = () => {
             <Header
               currentDate={currentDate}
               city={weatherData.city}
-              name={'Arlo'}
+              name={nameOfPerson}
               clickHandler={handleAddCardClick}
             />
             <Route exact path="/">
@@ -138,7 +139,7 @@ const App = () => {
             <Route exact path="/profile">
               {clothingItems.length !== 0 && (
                 <Profile
-                  nameProfile={'Arlo'}
+                  nameOfPerson={nameOfPerson}
                   cards={clothingItems}
                   onCardClick={handleCardClick}
                   onCardDelete={handleCardDelete}

@@ -5,13 +5,7 @@ import ItemSection from '../ItemSection/ItemSection';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 // const cards = clothingItems;
 
-function Main({
-  icon,
-  className,
-  temperature,
-  clothingItemArray,
-  onCardClick,
-}) {
+function Main({ className, temperature, clothingItemArray, onCardClick }) {
   const contextValue = useContext(CurrentTemperatureUnitContext);
   console.log('contextValue=', contextValue);
 

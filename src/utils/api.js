@@ -30,7 +30,7 @@ export const addItem = ({ name, weather, imageUrl }) => {
 };
 
 export const removeItem = (id) => {
-  return fetch(`$BASE_URL.items/${id}`, {
+  return fetch(`${BASE_URL}/items/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

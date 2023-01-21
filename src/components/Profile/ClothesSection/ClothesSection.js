@@ -1,28 +1,37 @@
 import React, { useContext } from 'react';
 import './ClothesSection.css';
+import ClothesCard from '../ClothesCard/ClothesCard';
 import '../Profile.css';
-import ItemSection from '../../ItemSection/ItemSection';
+// import ItemSection from '../../ItemSection/ItemSection';
 
 function ClothesSection({
-  className,
-  temperature,
   clothingItemArray,
+  clothingType,
+  // className,
+  // temperature,
   onCardClick,
+  onCardDelete,
+  onAddNewClick,
 }) {
   console.log('inside clothesSection');
 
   return (
-    <div className="clothes">
+    <div className="clothesSection">
       {/* <p className="main__items">
         oday is {temperature} {contextValue.currentTemperatureUnit} / Your
         clothes include:
       </p> */}
-      <ItemSection
-        clothingItemArray={clothingItemArray}
-        // clothingType={clothingType}
-        clothingType={'Hot'}
-        onCardClick={onCardClick}
-      />
+      {clothingItemArray
+        .filter((ClothesCardData) => ClothesCardData.weather === clothingType)
+        .map((filteredItem, _id) => (
+          <ClothesCard
+            ClothesCardData={filteredItem}
+            key={_id}
+            onCardClick={onCardClick}
+            onCardDelete={onCardDelete}
+            onAddNewClick={onAddNewClick}
+          />
+        ))}
     </div>
   );
 }
