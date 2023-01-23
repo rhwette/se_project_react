@@ -17,10 +17,7 @@ function ClothesSection({
 
   return (
     <div className="clothesSection">
-      {/* <p className="main__items">
-        oday is {temperature} {contextValue.currentTemperatureUnit} / Your
-        clothes include:
-      </p> */}
+      <p className="clothesSection__text">Your clothes include:</p>
       {clothingItemArray
         .filter((ClothesCardData) => ClothesCardData.weather === clothingType)
         .map((filteredItem, _id) => (

@@ -119,6 +119,11 @@
       "weather": "hot",
       "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
       "id": 38
+    },
+    {
+      "weather": "cold",
+      "imageUrl": "https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg",
+      "id": 39
     }
   ]
 }

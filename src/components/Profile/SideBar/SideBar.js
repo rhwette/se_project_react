@@ -6,7 +6,7 @@ import { nameOfPerson } from '../../../utils/constants';
 
 function SideBar(props) {
   return (
-    <div>
+    <div className="sidebar">
       <img className="sidebar__avatar" src={avatarPath} alt="avatar" />
       <p className="sidebar__text"> {nameOfPerson}</p>
     </div>

@@ -32,6 +32,7 @@ const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState([]);
   const [activeModal, setActiveModal] = useState('');
+  const [isProfileModal, setIsProfileModal] = useState(false);
   const [selectedCard, setSelectedCard] = React.useState(null);
 
   // the App component makes an API request for the weather data (only once - on mounting)
@@ -56,7 +57,8 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleCardClick = (card) => {
+  const handleCardClick = (card, isFromProfile) => {
+    setIsProfileModal(isFromProfile);
     setSelectedCard(card);
     setActiveModal('preview');
     // setActiveModal('create');
@@ -105,6 +107,11 @@ const App = () => {
     setActiveModal('create');
     // setActiveModal('preview');
   };
+
+  // function handleDeleteClick() {
+  //   setActiveModal('');
+  //   setShowDeleteModal(true);
+  // }
 
   const currentDate = new Date().toLocaleString('default', {
     month: 'long',
@@ -229,7 +236,12 @@ const App = () => {
           </ModalWithForm>
         )}
         {activeModal === 'preview' && (
-          <ItemModal card={selectedCard} onClose={closeAllModals} />
+          <ItemModal
+            card={selectedCard}
+            onClose={closeAllModals}
+            isProfileModal={isProfileModal}
+            setActiveModal={setActiveModal}
+          />
         )}
       </CurrentTemperatureUnitContext.Provider>
     </div>
