@@ -7,10 +7,22 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Beanie.png?etag=bc10497cc80fa557f036e94f9999f7b2"
     },
     {
+      "id": 1,
+      "name": "Boot",
+      "weather": "cold",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e"
+    },
+    {
       "id": 2,
       "name": "Cap",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591"
+    },
+    {
+      "id": 3,
+      "name": "Coat",
+      "weather": "cold",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4"
     },
     {
       "name": "Dress",
@@ -91,39 +103,20 @@
       "id": 16
     },
     {
-      "name": "rw",
-      "weather": "warm",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 33
+      "id": 17
     },
     {
-      "name": "rw test",
-      "weather": "cold",
-      "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
-      "id": 34
-    },
-    {
-      "name": "Yose1",
-      "weather": "hot",
-      "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
-      "id": 36
-    },
-    {
-      "name": "rw",
-      "weather": "warm",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 37
-    },
-    {
-      "name": "Yosemite Valley",
-      "weather": "hot",
-      "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
-      "id": 38
+      "id": 18
     },
     {
       "weather": "cold",
-      "imageUrl": "https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg",
-      "id": 39
+      "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
+      "id": 19
+    },
+    {
+      "weather": "cold",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
+      "id": 20
     }
   ]
 }

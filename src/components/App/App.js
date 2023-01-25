@@ -241,6 +241,8 @@ const App = () => {
             onClose={closeAllModals}
             isProfileModal={isProfileModal}
             setActiveModal={setActiveModal}
+            setClothingItems={setClothingItems}
+            onCardClick={handleCardClick}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

@@ -15,14 +15,14 @@
 }
 
 .ItemModal{
-    background-color: white;
+    background-color: #fff;
     position:relative;
     max-width:498px;
     height: 610px;
     border-radius: 16px;
     margin: 0 auto;
     padding:0;
-    z-index: 4;
+    z-index: 0;
 }
 
 @media screen and (max-width:650px) {
@@ -39,6 +39,15 @@
     }
 }
 
+.ItemModal-close {
+    position: absolute;
+    top:27px;
+    left:450px;
+    width:14px;
+    height:14px;
+    color: rgba(0,0,0,0.3);
+}
+
 .ItemModal-image {
     width:498px;
     height:498px;
@@ -46,36 +55,139 @@
     border-top-right-radius: 16px;
 }
 
-.ItemModal-textLine{
+.ItemModal-container{
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content:space-between;
 }
 
-.ItemModal-textItem {
-    flex: 1;
+.ItemModal-text {
+    font-family: Arial, Helvetica, sans-serif;
+    /* justify-content: left; */
+    /* flex: 1; */
     font-size: 20px;
-    color: black;
-    margin:20px 0px 12px 32px;
-    line-height:24px;
+    font-weight: 700;
+    line-height: 24px;
+    /* text-align: center; */
+    color: #000;
+    margin:15px 0px 0px 32px;
 }
 
-.ItemModal-textItemButton {
-    flex: 1;
-    font-size: 18px;
-    color: red;
-    margin:20px 0px 12px 200px;
+.ItemModal-button {
+    font-family: Arial, Helvetica, sans-serif;
+    /* justify-content: right; */
+    /* flex: 1; */
+    font-size: 20px;
+    font-weight: 700;
+    color:#FF4D00;
+    margin:15px 32px 0px 0px;
     line-height:24px;
     border: none;
     background-color: white;
     cursor: pointer;
 }
 
-.ItemModal-textWeather {
+.ItemModal-weather {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color: black;
-    margin:0px 0px 32px 32px;
+    font-weight: 700;
+    color: #000;
+    margin:12px 0px 0px 32px;
     line-height:24px;
 }
+
+.ItemModalDelete-popup{
+    position: fixed;
+    margin:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,.3);
+    z-index:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.ItemModalDelete{
+    background-color: #fff;
+    position:relative;
+    width: 670px;
+    max-width:670px;
+    height: 280px;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 20px;
+    margin: 0 auto;
+    padding:0;
+    z-index: 4;
+}
+
+.ItemModalDelete-close {
+    position: absolute;
+    top:23px;
+    left:633px;
+    width:14px;
+    height:14px;
+    color: black;
+}
+
+.ItemModalDelete-lineA {
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    color: black;
+    margin:60px 0px 0px 32px;
+}
+
+.ItemModalDelete-lineB {
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    color: black;
+    margin:0px 0px 0px 32px;
+}
+
+.ItemModalDelete-buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ItemModalDelete-button {
+    /* flex: 1; */
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF4D00;
+    margin:40px 0px 0px 0px;
+    line-height:24px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.ItemModalDelete-cancel {
+    /* flex: 1; */
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin:24px 0px 0px 0px;
+    line-height:24px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+
 
 
 
@@ -93,14 +205,9 @@
     }
 }
 
-.ItemModal-close {
-    position: absolute;
-    top:27px;
-    left:450px;
-    width:14px;
-    height:14px;
-    color: black;
-}
+
+
+
 
 @media screen and (max-width:650px) {
     .ItemModal-close {

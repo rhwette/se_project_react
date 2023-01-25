@@ -1,3 +1,6 @@
+
+
+
 .clothes__container {
     width: 226px;
     height: 226px;
@@ -6,17 +9,10 @@
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    /* background-color: #e9e9e9; */
-    background-color: pink;
+    background-color: #e9e9e9;
     margin: 20px 20px;
 }
  
-.clothes__image {
-    max-width: 126px;
-    height: 126px;
-    margin: 0;
-}
-
 .clothes__title {
     color: black;
     font-size: 16px;
@@ -25,14 +21,9 @@
     margin: 0;
 }
 
-.clothes__delete {
-    color: red;
-    font-size: 14px;
-    /* text-align: right; */
-    margin:0;
-    /* align-items: right; */
-    align-self: flex-end;
-    border: none;
-    margin-top: 10px;
-    background-color: #e9e9e9;
+.clothes__image {
+    max-width: 126px;
+    height: 126px;
+    margin: 0;
 }
+

@@ -1,7 +1,7 @@
 .sidebar {
     display: flex;
     flex-direction: row;
-    background-color: blue;
+    background-color: #fff;
     width: 25%;
 }
 
@@ -17,6 +17,7 @@
 
 .sidebar__text {
     margin-left: 25px;
+    margin-bottom: 50px;
     font-size: 16px;
     color: #000;
 }

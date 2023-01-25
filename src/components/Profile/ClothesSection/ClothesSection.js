@@ -14,6 +14,8 @@ function ClothesSection({
   onAddNewClick,
 }) {
   console.log('inside clothesSection');
+  console.log('clothingType', clothingType);
+  console.log('clothingItemArray', clothingItemArray);
 
   return (
     <div className="clothesSection">

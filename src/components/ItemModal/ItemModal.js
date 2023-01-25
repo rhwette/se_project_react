@@ -1,28 +1,85 @@
 import React, { useState } from 'react';
 import './ItemModal.css';
 import closeX from '../../images/close.svg';
+import { removeItem } from '../../utils/api';
+import { getItemList } from '../../utils/api';
 
-function ItemModal({ card, onClose, isProfileModal, setActiveModal }) {
+function ItemModal({
+  card,
+  onClose,
+  isProfileModal,
+  setActiveModal,
+  setClothingItems,
+  onCardClick,
+}) {
   const src2 = card.imageUrl;
   const alternate = card.name;
   const title = card.name;
   const weather = card.weather;
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  // CLICKING on RED "Delete Item" button brings us to "handleDeleteClick'"
   function handleDeleteClick() {
     // ConfirmDeleteModal();
     setShowDeleteModal(true);
   }
 
+  // line 16 sets  "showDeleteModal" to true, then
+  // line 62 calls "ConfirmDeleteModal"
+  function handleConfirmDelete() {
+    setActiveModal('');
+    removeItem(card.id).then((res) => {
+      getItemList()
+        .then((items) => {
+          setClothingItems(items);
+          console.log('items', items);
+        })
+        .catch((err) => console.log(err));
+    });
+    // setShowDeleteModal(false);
+    // setShowDeleteModal(true);
+  }
+
   function ConfirmDeleteModal() {
-    function handleConfirmDelete() {
-      setActiveModal('');
-      setShowDeleteModal(false);
-    }
     return (
       <div>
-        <p> are you sure </p>
-        <button onClick={handleConfirmDelete}> Delete </button>
+        <div className="ItemModalDelete-popup">
+          <div className="ItemModalDelete">
+            <img
+              className="ItemModalDelete-close"
+              onClick={onClose}
+              src={closeX}
+              alt="close"
+            />
+            <div>
+              <p className="ItemModalDelete-lineA">
+                {' '}
+                Are you sure you want to delete this item?{' '}
+              </p>
+              <p className="ItemModalDelete-lineB">
+                {' '}
+                This action is irreversible.
+              </p>
+              <div className="ItemModalDelete-buttonContainer">
+                <button
+                  className="ItemModalDelete-button"
+                  onClick={handleConfirmDelete}
+                >
+                  {' '}
+                  Yes, delete item{' '}
+                </button>
+                <button
+                  className="ItemModalDelete-cancel"
+                  onClick={onCardClick}
+                >
+                  {' '}
+                  Cancel{' '}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -37,19 +94,16 @@ function ItemModal({ card, onClose, isProfileModal, setActiveModal }) {
           alt="close"
         />
         <img className="ItemModal-image" src={src2} alt={alternate} />
-        <div className="ItemModal-textLine">
-          <p className="ItemModal-textItem"> {title}</p>
+        <div className="ItemModal-container">
+          <p className="ItemModal-text"> {title}</p>
           {isProfileModal && (
-            <button
-              className="ItemModal-textItemButton"
-              onClick={handleDeleteClick}
-            >
+            <button className="ItemModal-button" onClick={handleDeleteClick}>
               {' '}
               Delete item
             </button>
           )}
         </div>
-        <p className="ItemModal-textWeather">Weather: {weather}</p>
+        <p className="ItemModal-weather">Weather: {weather}</p>
       </div>
       {showDeleteModal && <ConfirmDeleteModal />}
     </div>
