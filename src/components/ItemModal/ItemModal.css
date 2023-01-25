@@ -58,26 +58,20 @@
 .ItemModal-container{
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
     justify-content:space-between;
 }
 
 .ItemModal-text {
     font-family: Arial, Helvetica, sans-serif;
-    /* justify-content: left; */
-    /* flex: 1; */
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
-    /* text-align: center; */
     color: #000;
     margin:15px 0px 0px 32px;
 }
 
 .ItemModal-button {
     font-family: Arial, Helvetica, sans-serif;
-    /* justify-content: right; */
-    /* flex: 1; */
     font-size: 20px;
     font-weight: 700;
     color:#FF4D00;
@@ -164,7 +158,6 @@
 }
 
 .ItemModalDelete-button {
-    /* flex: 1; */
     font-size: 20px;
     font-weight: 700;
     color: #FF4D00;
@@ -176,7 +169,6 @@
 }
 
 .ItemModalDelete-cancel {
-    /* flex: 1; */
     font-size: 20px;
     font-weight: 700;
     color: #000;
@@ -186,10 +178,6 @@
     background-color: white;
     cursor: pointer;
 }
-
-
-
-
 
 @media screen and (max-width:650px) {
     .ItemModal-image {
@@ -204,10 +192,6 @@
         height:358px;
     }
 }
-
-
-
-
 
 @media screen and (max-width:650px) {
     .ItemModal-close {

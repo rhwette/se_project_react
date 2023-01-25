@@ -7,9 +7,6 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer';
-// import ItemSection from '../ItemSection/ItemSection';
-// import ItemCard from '../ItemCard/ItemCard';
-// import AddItemModal from '../AddItemModal/AddItemModal';
 import ItemModal from '../ItemModal/ItemModal';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
@@ -61,7 +58,6 @@ const App = () => {
     setIsProfileModal(isFromProfile);
     setSelectedCard(card);
     setActiveModal('preview');
-    // setActiveModal('create');
   };
 
   const closeAllModals = () => {
@@ -105,13 +101,7 @@ const App = () => {
   const handleAddCardClick = (card) => {
     setSelectedCard(card);
     setActiveModal('create');
-    // setActiveModal('preview');
   };
-
-  // function handleDeleteClick() {
-  //   setActiveModal('');
-  //   setShowDeleteModal(true);
-  // }
 
   const currentDate = new Date().toLocaleString('default', {
     month: 'long',

@@ -1,10 +1,5 @@
 import { location } from './constants';
 import { ApiKey } from './constants';
-// console.log('location=', location);
-// console.log('Apikey=', ApiKey);
-
-// const ApiKey = '1e14b0e92d8d793d9c815b2ec73579de';
-// const parsedLocation = `${location.latitude}, ${location.longitude}`;
 
 const getForecastWeather = (location, ApiKey) => {
   return fetch(

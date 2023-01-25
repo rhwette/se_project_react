@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import './Main.css';
 import ItemSection from '../ItemSection/ItemSection';
-// import clothingItems from '../../utils/clothingItems';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
-// const cards = clothingItems;
 
 function Main({ className, temperature, clothingItemArray, onCardClick }) {
   const contextValue = useContext(CurrentTemperatureUnitContext);

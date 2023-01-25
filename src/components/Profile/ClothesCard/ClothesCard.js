@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ClothesCard.css';
-// import '../ClothesSection/ClothesSection.css';
 
 function ClothesCard({
   ClothesCardData,

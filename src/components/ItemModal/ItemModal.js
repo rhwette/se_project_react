@@ -21,12 +21,9 @@ function ItemModal({
 
   // CLICKING on RED "Delete Item" button brings us to "handleDeleteClick'"
   function handleDeleteClick() {
-    // ConfirmDeleteModal();
     setShowDeleteModal(true);
   }
 
-  // line 16 sets  "showDeleteModal" to true, then
-  // line 62 calls "ConfirmDeleteModal"
   function handleConfirmDelete() {
     setActiveModal('');
     removeItem(card.id).then((res) => {
@@ -37,8 +34,6 @@ function ItemModal({
         })
         .catch((err) => console.log(err));
     });
-    // setShowDeleteModal(false);
-    // setShowDeleteModal(true);
   }
 
   function ConfirmDeleteModal() {

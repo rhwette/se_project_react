@@ -3,7 +3,6 @@ import './Profile.css';
 import SideBar from './SideBar/SideBar';
 import './SideBar/SideBar.css';
 import ClothesSection from './ClothesSection/ClothesSection';
-// import ItemSection from '../ItemSection/ItemSection';
 import './ClothesSection/ClothesSection.css';
 
 const Profile = ({

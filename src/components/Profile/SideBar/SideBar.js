@@ -1,6 +1,5 @@
 import React from 'react';
 import './SideBar.css';
-// import '../Profile.css';
 import avatarPath from '../../../images/avatar-default2.jpg';
 import { nameOfPerson } from '../../../utils/constants';
 
