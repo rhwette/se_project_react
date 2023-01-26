@@ -11,10 +11,6 @@ function ClothesSection({
   onAddNewClick,
   clickHandler,
 }) {
-  console.log('inside clothesSection');
-  console.log('clothingType', clothingType);
-  console.log('clothingItemArray', clothingItemArray);
-
   return (
     <div className="clothesSection">
       <div className="clothesSection__headingContainer">
@@ -32,7 +28,6 @@ function ClothesSection({
             onCardClick={onCardClick}
             onCardDelete={onCardDelete}
             onAddNewClick={onAddNewClick}
-            // clickHandler={handleAddCardClick}
           />
         ))}
     </div>

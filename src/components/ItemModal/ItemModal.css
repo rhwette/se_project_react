@@ -78,7 +78,7 @@
     margin:15px 32px 0px 0px;
     line-height:24px;
     border: none;
-    background-color: white;
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -136,7 +136,7 @@
     font-weight: 700;
     line-height: 24px;
     text-align: center;
-    color: black;
+    color: #000;
     margin:60px 0px 0px 32px;
 }
 
@@ -147,7 +147,7 @@
     font-weight: 700;
     line-height: 24px;
     text-align: center;
-    color: black;
+    color: #000;
     margin:0px 0px 0px 32px;
 }
 
@@ -164,7 +164,7 @@
     margin:40px 0px 0px 0px;
     line-height:24px;
     border: none;
-    background-color: white;
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -175,7 +175,7 @@
     margin:24px 0px 0px 0px;
     line-height:24px;
     border: none;
-    background-color: white;
+    background-color: #fff;
     cursor: pointer;
 }
 

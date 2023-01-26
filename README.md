@@ -22,4 +22,9 @@ json-server is pointed to port 3001 and acts as a mock server
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The final version is available on github at.
+The final version is available on github at:
+
+https://github.com/rhwette/se_project_react.git
+
+The public version may be viewed at:
+https://rhwette.github.io/se_project_react/

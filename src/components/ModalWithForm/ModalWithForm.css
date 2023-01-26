@@ -15,7 +15,7 @@
 }
 
 .ModalWithForm{
-    background-color: white;
+    background-color: #fff;
     position: relative;
     max-width: 496px;
     height: 416px;
@@ -46,7 +46,7 @@
     left:440px;
     width:14px;
     height:14px;
-    color: black;
+    color: #000;
     margin:0;
 }
         
@@ -102,18 +102,18 @@
 }    
 
 .modal__input_type_card-name {
-    color: black;
+    color: #000;
     margin-bottom: 24px;
 }
 
 .modal__input_type_url {
-    color: black;
+    color: #000;
     margin-top:0;
 }
 
 .ModalWithForm-button {
     background-color: rgba(0,0,0,.3);
-    color: #ffffff;
+    color: #fff;
     width: 124px;
     height: 36px;
     border: none;
@@ -129,5 +129,5 @@
 }
 
 .modal__label_radio:checked:after {
-    color: #000000;
+    color: #000;
 }

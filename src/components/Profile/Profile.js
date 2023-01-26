@@ -6,8 +6,6 @@ import ClothesSection from './ClothesSection/ClothesSection';
 import './ClothesSection/ClothesSection.css';
 import clothingType from '../Main/Main';
 
-console.log('clothingType=', clothingType);
-
 const Profile = ({
   nameOfPerson,
   cards,
@@ -17,10 +15,6 @@ const Profile = ({
   clothingType,
   clickHandler,
 }) => {
-  console.log('clothingType=', clothingType);
-  console.log('cardss=', cards);
-  console.log('nameOfPerson=', nameOfPerson);
-
   return (
     <div className="profile">
       <section className="profile-sidebar">
@@ -33,7 +27,6 @@ const Profile = ({
           onCardDelete={onCardDelete}
           onAddNewClick={onAddNewClick}
           clothingType={clothingType}
-          // clothingType={'cold'}
           clickHandler={clickHandler}
         />
       </section>

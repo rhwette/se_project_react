@@ -13,7 +13,6 @@ export const getItemList = () => {
 };
 
 export const addItem = ({ name, weather, imageUrl }) => {
-  console.log('in addItem');
   return fetch(`${BASE_URL}/items`, {
     method: 'POST',
     headers: {

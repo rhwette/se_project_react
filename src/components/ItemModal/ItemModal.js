@@ -19,7 +19,6 @@ function ItemModal({
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  // CLICKING on RED "Delete Item" button brings us to "handleDeleteClick'"
   function handleDeleteClick() {
     setShowDeleteModal(true);
   }
@@ -30,10 +29,13 @@ function ItemModal({
       getItemList()
         .then((items) => {
           setClothingItems(items);
-          console.log('items', items);
         })
         .catch((err) => console.log(err));
     });
+  }
+
+  function handleCancelDelete() {
+    setActiveModal('');
   }
 
   function ConfirmDeleteModal() {
@@ -66,7 +68,7 @@ function ItemModal({
                 </button>
                 <button
                   className="ItemModalDelete-cancel"
-                  onClick={onCardClick}
+                  onClick={handleCancelDelete}
                 >
                   {' '}
                   Cancel{' '}
