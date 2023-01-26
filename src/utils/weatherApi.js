@@ -33,6 +33,8 @@ const filterDataFromWeatherApi = (data) => {
   weather.city = data.name;
   weather.temperature = data.main.temp;
   weather.id = data.weather[0].id;
+  console.log('weather.city', weather.city);
+  console.log('weather.temp', weather.temperature);
 
   function setDayWeather() {
     if (weather.id === 800) {

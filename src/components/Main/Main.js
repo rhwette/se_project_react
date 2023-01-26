@@ -3,7 +3,14 @@ import './Main.css';
 import ItemSection from '../ItemSection/ItemSection';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 
-function Main({ className, temperature, clothingItemArray, onCardClick }) {
+function Main({
+  className,
+  temperature,
+  clothingItemArray,
+  onCardClick,
+  // contextValue,
+  clothingType,
+}) {
   const contextValue = useContext(CurrentTemperatureUnitContext);
   console.log('contextValue=', contextValue);
 
@@ -11,27 +18,29 @@ function Main({ className, temperature, clothingItemArray, onCardClick }) {
     contextValue.currentTemperatureUnit === 'F'
       ? Math.round(temperature)
       : Math.round((temperature - 32) * (5 / 9));
-  const weatherType = () => {
-    if (contextValue.currentTemperatureUnit === 'F') {
-      if (temperature >= 86) {
-        return 'hot';
-      } else if (temperature >= 66 && temperature <= 85) {
-        return 'warm';
-      } else if (temperature <= 65) {
-        return 'cold';
-      }
-    } else if (contextValue.currentTemperatureUnit === 'C') {
-      if (temperature >= 30) {
-        return 'hot';
-      } else if (temperature >= 19 && temperature <= 29) {
-        return 'warm';
-      } else if (temperature <= 18) {
-        return 'cold';
-      }
-    }
-  };
 
-  const clothingType = weatherType();
+  // const weatherType = () => {
+  //   if (contextValue.currentTemperatureUnit === 'F') {
+  //     if (temperature >= 86) {
+  //       return 'hot';
+  //     } else if (temperature >= 66 && temperature <= 85) {
+  //       return 'warm';
+  //     } else if (temperature <= 65) {
+  //       return 'cold';
+  //     }
+  //   } else if (contextValue.currentTemperatureUnit === 'C') {
+  //     if (temperature >= 30) {
+  //       return 'hot';
+  //     } else if (temperature >= 19 && temperature <= 29) {
+  //       return 'warm';
+  //     } else if (temperature <= 18) {
+  //       return 'cold';
+  //     }
+  //   }
+  // };
+
+  // const clothingType = weatherType();
+  // console.log('clothingType=', clothingType);
 
   return (
     <main className="main">

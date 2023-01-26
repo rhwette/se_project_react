@@ -23,6 +23,7 @@ import {
   removeItem,
 } from '../../utils/api';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+
 const App = () => {
   // the initial state of state variables contains the correct data type
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
@@ -32,6 +33,37 @@ const App = () => {
   const [isProfileModal, setIsProfileModal] = useState(false);
   const [selectedCard, setSelectedCard] = React.useState(null);
 
+  const temperature = weatherData.temperature;
+  console.log('temperature on line 37', temperature);
+  currentTemperatureUnit === 'F'
+    ? Math.round(temperature)
+    : Math.round((temperature - 32) * (5 / 9));
+
+  console.log('temperature on line 42', temperature);
+
+  const weatherType = () => {
+    if (currentTemperatureUnit === 'F') {
+      if (temperature >= 86) {
+        return 'hot';
+      } else if (temperature >= 66 && temperature <= 85) {
+        return 'warm';
+      } else if (temperature <= 65) {
+        return 'cold';
+      }
+    } else if (currentTemperatureUnit === 'C') {
+      if (temperature >= 30) {
+        return 'hot';
+      } else if (temperature >= 19 && temperature <= 29) {
+        return 'warm';
+      } else if (temperature <= 18) {
+        return 'cold';
+      }
+    }
+  };
+
+  const clothingType = weatherType();
+  console.log('clothingType line 65', clothingType);
+  console.log('weatherType line 66', weatherType);
   // the App component makes an API request for the weather data (only once - on mounting)
 
   useEffect(() => {
@@ -39,6 +71,7 @@ const App = () => {
       getForecastWeather(location, ApiKey)
         .then((data) => {
           setWeatherData(filterDataFromWeatherApi(data));
+          console.log('data', data);
         })
         .catch((err) => console.log(err));
     }
@@ -130,6 +163,7 @@ const App = () => {
                   temperature={weatherData.temperature}
                   clothingItemArray={clothingItems}
                   onCardClick={handleCardClick}
+                  clothingType={clothingType}
                 />
               )}
             </Route>
@@ -141,6 +175,8 @@ const App = () => {
                   onCardClick={handleCardClick}
                   onCardDelete={handleCardDelete}
                   onAddNewClick={() => setActiveModal('create')}
+                  clothingType={clothingType}
+                  clickHandler={handleAddCardClick}
                 />
               )}
             </Route>

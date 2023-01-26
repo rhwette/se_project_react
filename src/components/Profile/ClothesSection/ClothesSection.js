@@ -9,6 +9,7 @@ function ClothesSection({
   onCardClick,
   onCardDelete,
   onAddNewClick,
+  clickHandler,
 }) {
   console.log('inside clothesSection');
   console.log('clothingType', clothingType);
@@ -16,7 +17,12 @@ function ClothesSection({
 
   return (
     <div className="clothesSection">
-      <p className="clothesSection__text">Your clothes include:</p>
+      <div className="clothesSection__headingContainer">
+        <p className="clothesSection__text">Your items:</p>
+        <button onClick={clickHandler} className="clothesSection__button">
+          + Add new
+        </button>
+      </div>
       {clothingItemArray
         .filter((ClothesCardData) => ClothesCardData.weather === clothingType)
         .map((filteredItem, _id) => (
@@ -26,6 +32,7 @@ function ClothesSection({
             onCardClick={onCardClick}
             onCardDelete={onCardDelete}
             onAddNewClick={onAddNewClick}
+            // clickHandler={handleAddCardClick}
           />
         ))}
     </div>
