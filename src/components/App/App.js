@@ -34,12 +34,9 @@ const App = () => {
   const [selectedCard, setSelectedCard] = React.useState(null);
 
   const temperature = weatherData.temperature;
-  console.log('temperature on line 37', temperature);
   currentTemperatureUnit === 'F'
     ? Math.round(temperature)
     : Math.round((temperature - 32) * (5 / 9));
-
-  console.log('temperature on line 42', temperature);
 
   const weatherType = () => {
     if (currentTemperatureUnit === 'F') {
@@ -62,8 +59,6 @@ const App = () => {
   };
 
   const clothingType = weatherType();
-  console.log('clothingType line 65', clothingType);
-  console.log('weatherType line 66', weatherType);
   // the App component makes an API request for the weather data (only once - on mounting)
 
   useEffect(() => {
@@ -71,7 +66,6 @@ const App = () => {
       getForecastWeather(location, ApiKey)
         .then((data) => {
           setWeatherData(filterDataFromWeatherApi(data));
-          console.log('data', data);
         })
         .catch((err) => console.log(err));
     }
@@ -82,7 +76,6 @@ const App = () => {
     getItemList()
       .then((items) => {
         setClothingItems(items);
-        console.log('items', items);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -141,8 +134,7 @@ const App = () => {
     day: 'numeric',
     time: 'numeric',
   });
-  console.log('BASE_URL=', BASE_URL);
-  console.log('weatherData.temperature=', weatherData.temperature);
+
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
