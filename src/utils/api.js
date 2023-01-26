@@ -1,4 +1,6 @@
-export const BASE_URL = 'http://localhost:3001';
+// export const BASE_URL = 'http://localhost:3001';
+export const BASE_URL =
+  'https://my-json-server.typicode.com/rhwette/se_project_react';
 
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -16,7 +18,7 @@ export const addItem = ({ name, weather, imageUrl }) => {
   return fetch(`${BASE_URL}/items`, {
     method: 'POST',
     headers: {
-      'Content-type': 'application/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       name,
