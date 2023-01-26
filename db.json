@@ -43,12 +43,6 @@
       "id": 6
     },
     {
-      "name": "Jeans",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jeans.png?etag=58345e8bef1ce5f95ac882e71d309e6c",
-      "id": 7
-    },
-    {
       "name": "Loafers",
       "weather": "warm",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Loafers.png?etag=dc2d6e1ca7b297597406e35c40aef030",
@@ -103,12 +97,6 @@
       "id": 16
     },
     {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
       "weather": "cold",
       "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
       "id": 19
@@ -117,6 +105,21 @@
       "weather": "cold",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
       "id": 20
+    },
+    {
+      "weather": "hot",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
+      "id": 21
+    },
+    {
+      "weather": "warm",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
+      "id": 22
+    },
+    {
+      "weather": "cold",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
+      "id": 23
     }
   ]
 }
