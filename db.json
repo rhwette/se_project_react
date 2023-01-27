@@ -112,14 +112,14 @@
       "id": 21
     },
     {
-      "weather": "warm",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 22
-    },
-    {
       "weather": "cold",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
       "id": 23
+    },
+    {
+      "weather": "warm",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
+      "id": 25
     }
   ]
 }
