@@ -276,6 +276,7 @@ const App = () => {
             setActiveModal={setActiveModal}
             setClothingItems={setClothingItems}
             onCardClick={handleCardClick}
+            handleCardDelete={handleCardDelete}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

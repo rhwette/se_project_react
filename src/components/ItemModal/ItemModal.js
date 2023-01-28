@@ -4,6 +4,51 @@ import closeX from '../../images/close.svg';
 import { removeItem } from '../../utils/api';
 import { getItemList } from '../../utils/api';
 
+function ConfirmDeleteModal({ handleCardDelete, handleCancelDelete, card }) {
+  return (
+    <div>
+      <div className="ItemModalDelete-popup">
+        <div className="ItemModalDelete">
+          <img
+            className="ItemModalDelete-close"
+            onClick={onClose}
+            src={closeX}
+            alt="close"
+          />
+          <div>
+            <p className="ItemModalDelete-lineA">
+              {' '}
+              Are you sure you want to delete this item?{' '}
+            </p>
+            <p className="ItemModalDelete-lineB">
+              {' '}
+              This action is irreversible.
+            </p>
+            <div className="ItemModalDelete-buttonContainer">
+              <button
+                className="ItemModalDelete-button"
+                onClick={() => {
+                  handleCardDelete(card);
+                  handleCancelDelete();
+                }}
+              >
+                Yes, delete item{' '}
+              </button>
+              <button
+                className="ItemModalDelete-cancel"
+                onClick={handleCancelDelete}
+              >
+                {' '}
+                Cancel{' '}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ItemModal({
   card,
   onClose,
@@ -11,6 +56,7 @@ function ItemModal({
   setActiveModal,
   setClothingItems,
   onCardClick,
+  handleCardDelete,
 }) {
   const src2 = card.imageUrl;
   const alternate = card.name;
@@ -26,8 +72,11 @@ function ItemModal({
   function handleConfirmDelete() {
     setActiveModal('');
     removeItem(card.id).then((res) => {
+      // console.log('FFFA card.id in ItemModal=' card.id);
+      console.log('FFFB res in ItemModal=', res);
       getItemList()
         .then((items) => {
+          console.log('GGG items in ItemModal=', items);
           setClothingItems(items);
         })
         .catch((err) => console.log(err));
@@ -38,48 +87,48 @@ function ItemModal({
     setActiveModal('');
   }
 
-  function ConfirmDeleteModal() {
-    return (
-      <div>
-        <div className="ItemModalDelete-popup">
-          <div className="ItemModalDelete">
-            <img
-              className="ItemModalDelete-close"
-              onClick={onClose}
-              src={closeX}
-              alt="close"
-            />
-            <div>
-              <p className="ItemModalDelete-lineA">
-                {' '}
-                Are you sure you want to delete this item?{' '}
-              </p>
-              <p className="ItemModalDelete-lineB">
-                {' '}
-                This action is irreversible.
-              </p>
-              <div className="ItemModalDelete-buttonContainer">
-                <button
-                  className="ItemModalDelete-button"
-                  onClick={handleConfirmDelete}
-                >
-                  {' '}
-                  Yes, delete item{' '}
-                </button>
-                <button
-                  className="ItemModalDelete-cancel"
-                  onClick={handleCancelDelete}
-                >
-                  {' '}
-                  Cancel{' '}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // function ConfirmDeleteModal() {
+  //   return (
+  //     <div>
+  //       <div className="ItemModalDelete-popup">
+  //         <div className="ItemModalDelete">
+  //           <img
+  //             className="ItemModalDelete-close"
+  //             onClick={onClose}
+  //             src={closeX}
+  //             alt="close"
+  //           />
+  //           <div>
+  //             <p className="ItemModalDelete-lineA">
+  //               {' '}
+  //               Are you sure you want to delete this item?{' '}
+  //             </p>
+  //             <p className="ItemModalDelete-lineB">
+  //               {' '}
+  //               This action is irreversible.
+  //             </p>
+  //             <div className="ItemModalDelete-buttonContainer">
+  //               <button
+  //                 className="ItemModalDelete-button"
+  //                 onClick={handleConfirmDelete}
+  //               >
+  //                 {' '}
+  //                 Yes, delete item{' '}
+  //               </button>
+  //               <button
+  //                 className="ItemModalDelete-cancel"
+  //                 onClick={handleCancelDelete}
+  //               >
+  //                 {' '}
+  //                 Cancel{' '}
+  //               </button>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="ItemModal-popup">
@@ -102,7 +151,13 @@ function ItemModal({
         </div>
         <p className="ItemModal-weather">Weather: {weather}</p>
       </div>
-      {showDeleteModal && <ConfirmDeleteModal />}
+      {showDeleteModal && (
+        <ConfirmDeleteModal
+          handleCardDelete={handleCardDelete}
+          handleCancelDelete={() => setShowDeleteModal(false)}
+          card={card}
+        />
+      )}
     </div>
   );
 }
