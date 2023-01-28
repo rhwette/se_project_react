@@ -97,29 +97,22 @@
       "id": 16
     },
     {
-      "weather": "cold",
+      "name": "Yosemite Valley",
+      "weather": "warm",
       "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
-      "id": 19
+      "id": 33
     },
     {
-      "weather": "cold",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 20
-    },
-    {
-      "weather": "hot",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 21
-    },
-    {
-      "weather": "cold",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 23
-    },
-    {
+      "name": "rw",
       "weather": "warm",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 25
+      "id": 34
+    },
+    {
+      "name": "rw test",
+      "weather": "warm",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
+      "id": 35
     }
   ]
 }

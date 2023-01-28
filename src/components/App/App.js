@@ -33,32 +33,41 @@ const App = () => {
   const [isProfileModal, setIsProfileModal] = useState(false);
   const [selectedCard, setSelectedCard] = React.useState(null);
 
-  const temperature = weatherData.temperature;
-  currentTemperatureUnit === 'F'
-    ? Math.round(temperature)
-    : Math.round((temperature - 32) * (5 / 9));
+  let temperature = weatherData.temperature;
+  console.log('AAA temperature=', temperature);
+  // the CTU changes depending on the toggleButton position
+  console.log('BBB currentTemperatureUnit=', currentTemperatureUnit);
+
+  temperature =
+    currentTemperatureUnit === 'F'
+      ? Math.round(temperature)
+      : Math.round((temperature - 32) * (5 / 9));
+  let roundedTemperature = temperature;
+  console.log('CCC roundedTemperature=', roundedTemperature);
 
   const weatherType = () => {
     if (currentTemperatureUnit === 'F') {
-      if (temperature >= 86) {
+      if (roundedTemperature >= 86) {
         return 'hot';
-      } else if (temperature >= 66 && temperature <= 85) {
+      } else if (roundedTemperature >= 66 && roundedTemperature < 86) {
         return 'warm';
-      } else if (temperature <= 65) {
+      } else if (roundedTemperature < 66) {
         return 'cold';
       }
     } else if (currentTemperatureUnit === 'C') {
-      if (temperature >= 30) {
+      if (roundedTemperature >= 30) {
         return 'hot';
-      } else if (temperature >= 19 && temperature <= 29) {
+      } else if (roundedTemperature >= 18.89 && roundedTemperature < 30) {
         return 'warm';
-      } else if (temperature <= 18) {
+      } else if (roundedTemperature < 18.89) {
         return 'cold';
       }
     }
   };
 
   const clothingType = weatherType();
+  console.log('DDD clothingType =', clothingType);
+
   // the App component makes an API request for the weather data (only once - on mounting)
 
   useEffect(() => {
@@ -75,6 +84,7 @@ const App = () => {
   useEffect(() => {
     getItemList()
       .then((items) => {
+        console.log('items in getgItemLilst=', items);
         setClothingItems(items);
       })
       .catch((err) => console.log(err));
@@ -92,12 +102,17 @@ const App = () => {
 
   const modalFormAdd = (evt) => {
     evt.preventDefault();
-    const nameOfClothing = evt.target.querySelector('#clothing-name').value;
+    const name = evt.target.querySelector('#clothing-name').value;
     const imageUrl = evt.target.querySelector('#clothing-link').value;
     const weather = evt.target.querySelector(
       'input[name="weatherType"]:checked'
     ).value;
-    addItem({ nameOfClothing, weather, imageUrl });
+    console.log('EEE name, weather, imageUrl', name, weather, imageUrl);
+    addItem({ name, weather, imageUrl }).then((response) => {
+      console.log('EEE name, weather, imageUrl', name, weather, imageUrl);
+      console.log('response', response);
+      setClothingItems([...clothingItems, response]);
+    });
     closeAllModals();
   };
 

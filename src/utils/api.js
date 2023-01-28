@@ -3,10 +3,14 @@ export const BASE_URL = 'http://localhost:3001';
 // 'https://my-json-server.typicode.com/rhwette/se_project_react';
 
 export const handleServerResponse = (res) => {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  const resp = res.json();
+  console.log('resp=', resp);
+  console.log('here1');
+  return res.ok ? resp : Promise.reject(`Error: ${res.status}`);
 };
 
 export const getItemList = () => {
+  console.log('here');
   return fetch(`${BASE_URL}/items`, {
     headers: {
       'Content-Type': 'application/json',
