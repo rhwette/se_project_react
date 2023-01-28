@@ -28,6 +28,12 @@
       "name": "Dress",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Dress.png?etag=1f9cd32a311ab139cab43494883720bf",
+      "id": 4
+    },
+    {
+      "name": "Dress",
+      "weather": "hot",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Dress.png?etag=1f9cd32a311ab139cab43494883720bf",
       "id": 5
     },
     {
@@ -40,7 +46,7 @@
       "name": "Jacket",
       "weather": "cold",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jacket.png?etag=f4bb188deaa25ac84ce2338be2d404ad",
-      "id": 6
+      "id": 7
     },
     {
       "name": "Loafers",
@@ -100,19 +106,19 @@
       "name": "Yosemite Valley",
       "weather": "warm",
       "imageUrl": "https://code.s3.yandex.net/web-code/yosemite.jpg",
-      "id": 33
+      "id": 17
     },
     {
       "name": "rw",
       "weather": "warm",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 34
+      "id": 18
     },
     {
       "name": "rw test",
       "weather": "warm",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 35
+      "id": 19
     }
   ]
 }

@@ -4,7 +4,12 @@ import closeX from '../../images/close.svg';
 import { removeItem } from '../../utils/api';
 import { getItemList } from '../../utils/api';
 
-function ConfirmDeleteModal({ handleCardDelete, handleCancelDelete, card }) {
+function ConfirmDeleteModal({
+  handleCardDelete,
+  handleCancelDelete,
+  card,
+  onClose,
+}) {
   return (
     <div>
       <div className="ItemModalDelete-popup">
