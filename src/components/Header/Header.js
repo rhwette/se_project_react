@@ -16,7 +16,7 @@ function Header({ currentDate, city, name, clickHandler }) {
   return (
     <header className="header">
       <div className="header__containerLeft">
-        <Link to="/">
+        <Link to="/se_project_react">
           <img src={logoPath} alt="logo" className="header__logo" />
         </Link>
       </div>
@@ -37,7 +37,7 @@ function Header({ currentDate, city, name, clickHandler }) {
           + Add clothes
         </button>
 
-        <Link to="/profile">
+        <Link to="/se_project_react/profile">
           <p className="header__text"> {name}</p>
         </Link>
         <img src={avatarPath} alt="avatar" className="header__avatar" />
