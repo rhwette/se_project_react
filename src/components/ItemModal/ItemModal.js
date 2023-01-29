@@ -58,6 +58,8 @@ function ItemModal({
   onClose,
   isProfileModal,
   setActiveModal,
+  setClothingItems,
+  onCardClick,
   handleCardDelete,
 }) {
   const src2 = card.imageUrl;
@@ -71,9 +73,9 @@ function ItemModal({
     setShowDeleteModal(true);
   }
 
-  function handleCancelDelete() {
-    setActiveModal('');
-  }
+  // function handleCancelDelete() {
+  //   setActiveModal('');
+  // }
 
   return (
     <div className="ItemModal-popup">
@@ -98,10 +100,10 @@ function ItemModal({
       </div>
       {showDeleteModal && (
         <ConfirmDeleteModal
-          handleCardDelete={handleCardDelete}
-          handleCancelDelete={() => setShowDeleteModal(false)}
           card={card}
           onClose={onClose}
+          handleCardDelete={handleCardDelete}
+          handleCancelDelete={() => setShowDeleteModal(false)}
         />
       )}
     </div>
