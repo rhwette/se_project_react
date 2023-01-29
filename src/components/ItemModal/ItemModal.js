@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import './ItemModal.css';
 import closeX from '../../images/close.svg';
-import { removeItem } from '../../utils/api';
-import { getItemList } from '../../utils/api';
 
 function ConfirmDeleteModal({
   handleCardDelete,
   handleCancelDelete,
   card,
   onClose,
-  // handleConfirmDelete,
 }) {
   return (
     <div>
@@ -61,8 +58,6 @@ function ItemModal({
   onClose,
   isProfileModal,
   setActiveModal,
-  setClothingItems,
-  // onCardClick,
   handleCardDelete,
 }) {
   const src2 = card.imageUrl;
@@ -75,20 +70,6 @@ function ItemModal({
   function handleDeleteClick() {
     setShowDeleteModal(true);
   }
-
-  // function handleConfirmDelete() {
-  //   setActiveModal('');
-  //   removeItem(card.id).then((res) => {
-  //     // console.log('FFFA card.id in ItemModal=' card.id);
-  //     console.log('FFFB res in ItemModal=', res);
-  //     getItemList()
-  //       .then((items) => {
-  //         console.log('GGG items in ItemModal=', items);
-  //         setClothingItems(items);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   });
-  // }
 
   function handleCancelDelete() {
     setActiveModal('');
@@ -119,7 +100,6 @@ function ItemModal({
         <ConfirmDeleteModal
           handleCardDelete={handleCardDelete}
           handleCancelDelete={() => setShowDeleteModal(false)}
-          // handleConfirmDelete={handleConfirmDelete}
           card={card}
           onClose={onClose}
         />

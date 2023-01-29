@@ -1,6 +1,3 @@
-import { location } from './constants';
-import { ApiKey } from './constants';
-
 const getForecastWeather = (location, ApiKey) => {
   return fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${ApiKey}`

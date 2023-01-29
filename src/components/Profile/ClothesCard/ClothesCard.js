@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import './ClothesCard.css';
 
-function ClothesCard({
-  ClothesCardData,
-  onCardClick,
-  // onCardDelete,
-  // onAddNewClick,
-}) {
+function ClothesCard({ ClothesCardData, onCardClick }) {
   const src = ClothesCardData.imageUrl;
   const alternate = ClothesCardData.name;
   const title = ClothesCardData.name;

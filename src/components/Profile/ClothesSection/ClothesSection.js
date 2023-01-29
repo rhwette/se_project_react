@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './ClothesSection.css';
 import ClothesCard from '../ClothesCard/ClothesCard';
 import '../Profile.css';

@@ -4,9 +4,7 @@ import './ToggleSwitch.css';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 
 const ToggleSwitch = ({ isOn, handleToggle }) => {
-  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
-    CurrentTemperatureUnitContext
-  );
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   const [isChecked, setIsChecked] = useState(currentTemperatureUnit === 'C');
   useEffect(

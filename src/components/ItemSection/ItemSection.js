@@ -1,7 +1,6 @@
 import React from 'react';
 import './ItemSection.css';
 import ItemCard from '../ItemCard/ItemCard';
-// import ItemModal from '../ItemModal/ItemModal';
 
 function ItemSection({ clothingItemArray, clothingType, onCardClick }) {
   return (

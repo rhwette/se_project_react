@@ -4,7 +4,6 @@ import SideBar from './SideBar/SideBar';
 import './SideBar/SideBar.css';
 import ClothesSection from './ClothesSection/ClothesSection';
 import './ClothesSection/ClothesSection.css';
-// import clothingType from '../Main/Main';
 
 const Profile = ({
   nameOfPerson,

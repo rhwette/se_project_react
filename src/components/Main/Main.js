@@ -11,7 +11,6 @@ function Main({
   clothingType,
 }) {
   const contextValue = useContext(CurrentTemperatureUnitContext);
-  console.log('clothingItemArray in Main=', clothingItemArray);
   temperature =
     contextValue.currentTemperatureUnit === 'F'
       ? Math.round(temperature)

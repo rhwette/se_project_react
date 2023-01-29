@@ -12,20 +12,11 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
 import { getForecastWeather } from '../../utils/weatherApi';
 import { filterDataFromWeatherApi } from '../../utils/weatherApi';
-// import defaultClothingItems from '../../utils/clothingItems';
 import { ApiKey } from '../../utils/constants';
 import { nameOfPerson } from '../../utils/constants';
-import {
-  // BASE_URL,
-  addItem,
-  getItemList,
-  // handleServerResponse,
-  removeItem,
-} from '../../utils/api';
-// import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+import { addItem, getItemList, removeItem } from '../../utils/api';
 
 const App = () => {
-  // the initial state of state variables contains the correct data type
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState([]);
@@ -34,16 +25,12 @@ const App = () => {
   const [selectedCard, setSelectedCard] = React.useState(null);
 
   let temperature = weatherData.temperature;
-  console.log('AAA temperature=', temperature);
-  // the CTU changes depending on the toggleButton position
-  console.log('BBB currentTemperatureUnit=', currentTemperatureUnit);
 
   temperature =
     currentTemperatureUnit === 'F'
       ? Math.round(temperature)
       : Math.round((temperature - 32) * (5 / 9));
   let roundedTemperature = temperature;
-  console.log('CCC roundedTemperature=', roundedTemperature);
 
   const weatherType = () => {
     if (currentTemperatureUnit === 'F') {
@@ -66,9 +53,6 @@ const App = () => {
   };
 
   const clothingType = weatherType();
-  console.log('DDD clothingType =', clothingType);
-
-  // the App component makes an API request for the weather data (only once - on mounting)
 
   useEffect(() => {
     if (location.latitude && location.longitude) {
@@ -80,11 +64,9 @@ const App = () => {
     }
   }, []);
 
-  // the App component saves default clothing items in the state
   useEffect(() => {
     getItemList()
       .then((items) => {
-        console.log('items in getgItemLilst=', items);
         setClothingItems(items);
       })
       .catch((err) => console.log(err));
@@ -107,10 +89,7 @@ const App = () => {
     const weather = evt.target.querySelector(
       'input[name="weatherType"]:checked'
     ).value;
-    console.log('EEE name, weather, imageUrl', name, weather, imageUrl);
     addItem({ name, weather, imageUrl }).then((response) => {
-      console.log('EEE name, weather, imageUrl', name, weather, imageUrl);
-      console.log('response', response);
       setClothingItems([...clothingItems, response]);
     });
     closeAllModals();
@@ -122,17 +101,7 @@ const App = () => {
       : setCurrentTemperatureUnit('F');
   };
 
-  // const handleAddItemSubmit = (item) => {
-  //   addItem(item)
-  //     .then((newItem) => {
-  //       setClothingItems([newItem, ...clothingItems]);
-  //       closeAllModals();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   const handleCardDelete = (card) => {
-    console.log('JJJ card,id', card.id);
     removeItem(card.id)
       .then(() => {
         setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
