@@ -4,8 +4,8 @@ import './ClothesCard.css';
 function ClothesCard({
   ClothesCardData,
   onCardClick,
-  onCardDelete,
-  onAddNewClick,
+  // onCardDelete,
+  // onAddNewClick,
 }) {
   const src = ClothesCardData.imageUrl;
   const alternate = ClothesCardData.name;

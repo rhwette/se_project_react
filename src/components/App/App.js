@@ -12,17 +12,17 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { location } from '../../utils/constants';
 import { getForecastWeather } from '../../utils/weatherApi';
 import { filterDataFromWeatherApi } from '../../utils/weatherApi';
-import defaultClothingItems from '../../utils/clothingItems';
+// import defaultClothingItems from '../../utils/clothingItems';
 import { ApiKey } from '../../utils/constants';
 import { nameOfPerson } from '../../utils/constants';
 import {
-  BASE_URL,
+  // BASE_URL,
   addItem,
   getItemList,
-  handleServerResponse,
+  // handleServerResponse,
   removeItem,
 } from '../../utils/api';
-import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+// import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
 const App = () => {
   // the initial state of state variables contains the correct data type
@@ -122,16 +122,17 @@ const App = () => {
       : setCurrentTemperatureUnit('F');
   };
 
-  const handleAddItemSubmit = (item) => {
-    addItem(item)
-      .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
-        closeAllModals();
-      })
-      .catch((err) => console.log(err));
-  };
+  // const handleAddItemSubmit = (item) => {
+  //   addItem(item)
+  //     .then((newItem) => {
+  //       setClothingItems([newItem, ...clothingItems]);
+  //       closeAllModals();
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   const handleCardDelete = (card) => {
+    console.log('JJJ card,id', card.id);
     removeItem(card.id)
       .then(() => {
         setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
