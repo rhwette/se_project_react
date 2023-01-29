@@ -119,12 +119,6 @@
       "weather": "warm",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
       "id": 19
-    },
-    {
-      "name": "rw17",
-      "weather": "cold",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Jollibee_2011_logo.svg/1200px-Jollibee_2011_logo.svg.png",
-      "id": 20
     }
   ]
 }
