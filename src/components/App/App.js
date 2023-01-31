@@ -15,6 +15,7 @@ import { filterDataFromWeatherApi } from '../../utils/weatherApi';
 import { ApiKey } from '../../utils/constants';
 import { nameOfPerson } from '../../utils/constants';
 import { addItem, getItemList, removeItem } from '../../utils/api';
+import AddItemModal from '../AddItemModal/AddItemModal';
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
@@ -82,16 +83,14 @@ const App = () => {
     setActiveModal('');
   };
 
-  const modalFormAdd = (evt) => {
-    evt.preventDefault();
+  const modalFormAdd = (name, imageUrl, weather) => {
+    console.log('name, image, wetaher', name, imageUrl, weather);
     const id = clothingItems.length;
     console.log('clothingItems', clothingItems);
-    const name = evt.target.querySelector('#clothing-name').value;
-    const imageUrl = evt.target.querySelector('#clothing-link').value;
-    const weather = evt.target.querySelector(
-      'input[name="weatherType"]:checked'
-    ).value;
+
     addItem({ id, name, weather, imageUrl }).then((response) => {
+      console.log('res', response);
+      console.log('[...clothingItems, response]', [...clothingItems, response]);
       setClothingItems([...clothingItems, response]);
     });
     closeAllModals();
@@ -163,82 +162,10 @@ const App = () => {
           <Footer />
         </div>
         {activeModal === 'create' && (
-          <ModalWithForm
-            title={'New garment'}
-            buttonLabel={'Add garment'}
-            onSubmit={modalFormAdd}
-            onClose={closeAllModals}
-          >
-            {/* first child starts here */}
-            <label htmlFor="clothing-name" className="ModalWithForm-heading">
-              Name
-              <input
-                type="text"
-                name="name"
-                id="clothing-name"
-                className="ModalWithForm-input modal__input_type_card-name"
-                placeholder="Name"
-                required
-                minLength="1"
-                maxLength="30"
-              />
-              <span className="modal__error" id="clothing-name-error"></span>
-            </label>
-
-            {/* second child starts here */}
-            <label htmlFor="clothing-link" className="ModalWithForm-heading">
-              Image
-              <input
-                type="url"
-                name="link"
-                id="clothing-link"
-                className="ModalWithForm-input modal__input_type_url"
-                placeholder="Image URL"
-                required
-              />
-              <span className="modal__error" id="clothing-link-error"></span>
-            </label>
-
-            {/* third child starts here */}
-            <p className="ModalWithForm-heading">select weather type</p>
-            <div className="ModalWithForm-input modal__input_type_radio">
-              <div>
-                <input
-                  type="radio"
-                  id="choiceHot"
-                  name="weatherType"
-                  value="hot"
-                />
-                <label className="modal__label_radio" htmlFor="choiceHot">
-                  Hot
-                </label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  id="choiceWarm"
-                  name="weatherType"
-                  value="warm"
-                />
-                <label className="modal__label_radio" htmlFor="choiceWarm">
-                  Warm
-                </label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  id="choiceCold"
-                  name="weatherType"
-                  value="cold"
-                />
-                <label className="modal__label_radio" htmlFor="choiceCold">
-                  Cold
-                </label>
-              </div>
-            </div>
-
-            {/* end children here */}
-          </ModalWithForm>
+          <AddItemModal
+            modalFormAdd={modalFormAdd}
+            closeAllModals={closeAllModals}
+          />
         )}
         {activeModal === 'preview' && (
           <ItemModal
