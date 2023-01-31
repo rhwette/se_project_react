@@ -88,7 +88,6 @@ const App = () => {
 
     addItem({ id, name, weather, imageUrl })
       .then((response) => {
-        console.log('in add item', response);
         if (response) {
           setClothingItems([...clothingItems, response]);
           closeAllModals();
@@ -106,7 +105,6 @@ const App = () => {
   const handleCardDelete = (card) => {
     removeItem(card.id)
       .then((response) => {
-        console.log(' in delete', response);
         if (response) {
           setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
           closeAllModals();

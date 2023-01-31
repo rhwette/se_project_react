@@ -3,7 +3,6 @@ export const BASE_URL =
 
 export const handleServerResponse = (res) => {
   const resp = res.json();
-  console.log(resp);
 
   return res.ok ? resp : Promise.reject(`Error: ${res.status}`);
 };

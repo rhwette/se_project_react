@@ -5,7 +5,7 @@
 // };
 
 // 211 church st north adams Mass
-// const location = { latitude: '42.69', longitude: '-73.11' };
+const location = { latitude: '42.69', longitude: '-73.11' };
 
 //Kty TX
 // const location = { latitude: '29.80', longitude: '-95.83' };
@@ -29,7 +29,7 @@
 // const location = { latitude: '24.76406', longitude: '46.76459' };
 
 //Sydney Australia
-const location = { latitude: '-33.865143', longitude: '151.209900' };
+// const location = { latitude: '-33.865143', longitude: '151.209900' };
 
 //Furnace Creek
 // const location = { latitude: '36.4580039', longitude: '-116.8708863' };
