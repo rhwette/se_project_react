@@ -8,13 +8,13 @@
 // const location = { latitude: '42.69', longitude: '-73.11' };
 
 //Kty TX
-// const location = { latitude: '29.80', longitude: '-95.83' };
+const location = { latitude: '29.80', longitude: '-95.83' };
 //
 //Galveston TX
 // const location = { latitude: '29.25', longitude: '-94.89' };
 
 //Lansing MI
-const location = { latitude: '42.72', longitude: '-84.52' };
+// const location = { latitude: '42.72', longitude: '-84.52' };
 
 //Holland MI
 // const location = { latitude: '42.77', longitude: '-86.11' };

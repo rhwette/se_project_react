@@ -9,18 +9,20 @@ export const handleServerResponse = (res) => {
 export const getItemList = () => {
   return fetch(`${BASE_URL}/items`, {
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/json',
     },
   }).then(handleServerResponse);
 };
 
-export const addItem = ({ name, weather, imageUrl }) => {
+export const addItem = ({ id, name, weather, imageUrl }) => {
+  console.log('id', id);
   return fetch(`${BASE_URL}/items`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/json',
     },
     body: JSON.stringify({
+      id,
       name,
       weather,
       imageUrl,
@@ -33,7 +35,7 @@ export const removeItem = (id) => {
   return fetch(`${BASE_URL}/items/${id}`, {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/json',
     },
   }).then(handleServerResponse);
 };

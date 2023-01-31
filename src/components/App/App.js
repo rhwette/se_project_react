@@ -84,12 +84,14 @@ const App = () => {
 
   const modalFormAdd = (evt) => {
     evt.preventDefault();
+    const id = clothingItems.length;
+    console.log('clothingItems', clothingItems);
     const name = evt.target.querySelector('#clothing-name').value;
     const imageUrl = evt.target.querySelector('#clothing-link').value;
     const weather = evt.target.querySelector(
       'input[name="weatherType"]:checked'
     ).value;
-    addItem({ name, weather, imageUrl }).then((response) => {
+    addItem({ id, name, weather, imageUrl }).then((response) => {
       setClothingItems([...clothingItems, response]);
     });
     closeAllModals();
