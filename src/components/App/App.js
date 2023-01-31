@@ -86,10 +86,12 @@ const App = () => {
   const modalFormAdd = (name, imageUrl, weather) => {
     const id = clothingItems.length;
 
-    addItem({ id, name, weather, imageUrl }).then((response) => {
-      setClothingItems([...clothingItems, response]);
-    });
-    closeAllModals();
+    addItem({ id, name, weather, imageUrl })
+      .then((response) => {
+        setClothingItems([...clothingItems, response]);
+        closeAllModals();
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleToggleSwitchChange = () => {
@@ -102,6 +104,7 @@ const App = () => {
     removeItem(card.id)
       .then(() => {
         setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
+        closeAllModals();
       })
       .catch((err) => console.log(err));
   };
