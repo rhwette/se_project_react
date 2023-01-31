@@ -84,13 +84,9 @@ const App = () => {
   };
 
   const modalFormAdd = (name, imageUrl, weather) => {
-    console.log('name, image, wetaher', name, imageUrl, weather);
     const id = clothingItems.length;
-    console.log('clothingItems', clothingItems);
 
     addItem({ id, name, weather, imageUrl }).then((response) => {
-      console.log('res', response);
-      console.log('[...clothingItems, response]', [...clothingItems, response]);
       setClothingItems([...clothingItems, response]);
     });
     closeAllModals();

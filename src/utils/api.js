@@ -15,7 +15,6 @@ export const getItemList = () => {
 };
 
 export const addItem = ({ id, name, weather, imageUrl }) => {
-  console.log('id', id);
   return fetch(`${BASE_URL}/items`, {
     method: 'POST',
     headers: {
@@ -31,7 +30,6 @@ export const addItem = ({ id, name, weather, imageUrl }) => {
 };
 
 export const removeItem = (id) => {
-  console.log('MMM id=', id);
   return fetch(`${BASE_URL}/items/${id}`, {
     method: 'DELETE',
     headers: {

@@ -8,17 +8,14 @@ function AddItemModal({ modalFormAdd, closeAllModals }) {
   const [weatherType, setWeatherType] = useState('');
 
   const handleNameChange = (evt) => {
-    console.log('evt.target', evt.target);
     setName(evt.target.value);
   };
 
   const handleImageChange = (evt) => {
-    console.log('evt.target', evt.target);
     setImage(evt.target.value);
   };
 
   const handleWeatherTypeChange = (evt) => {
-    console.log('evt.target', evt.target);
     setWeatherType(evt.target.value);
   };
 

@@ -11,7 +11,6 @@ function ClothesSection({
   onAddNewClick,
   clickHandler,
 }) {
-  console.log('clothingItemArray', clothingItemArray);
   return (
     <div className="clothesSection">
       <div className="clothesSection__headingContainer">
