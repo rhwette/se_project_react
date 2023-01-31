@@ -73,10 +73,6 @@ function ItemModal({
     setShowDeleteModal(true);
   }
 
-  // function handleCancelDelete() {
-  //   setActiveModal('');
-  // }
-
   return (
     <div className="ItemModal-popup">
       <div className="ItemModal">
