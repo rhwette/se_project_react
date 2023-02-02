@@ -97,7 +97,10 @@ const App = () => {
           setIsLoading(false);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const handleToggleSwitchChange = () => {
@@ -117,7 +120,10 @@ const App = () => {
           setShowDeleteModal(false);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const handleAddCardClick = (card) => {
