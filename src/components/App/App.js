@@ -143,7 +143,7 @@ const App = () => {
               name={nameOfPerson}
               clickHandler={handleAddCardClick}
             />
-            <Route exact path="/">
+            <Route exact path="/se_project_react">
               {weatherData.temperature && (
                 <Main
                   className={weatherData.className}
@@ -154,7 +154,7 @@ const App = () => {
                 />
               )}
             </Route>
-            <Route exact path="/profile">
+            <Route exact path="/se_project_react/profile">
               {clothingItems.length !== 0 && (
                 <Profile
                   nameOfPerson={nameOfPerson}
