@@ -3,49 +3,43 @@ import './ItemModal.css';
 import closeX from '../../images/close.svg';
 
 function ConfirmDeleteModal({
+  isLoading,
   handleCardDelete,
   handleCancelDelete,
   card,
   onClose,
 }) {
   return (
-    <div>
-      <div className="ItemModalDelete-popup">
-        <div className="ItemModalDelete">
-          <img
-            className="ItemModalDelete-close"
-            onClick={onClose}
-            src={closeX}
-            alt="close"
-          />
-          <div>
-            <p className="ItemModalDelete-lineA">
+    <div className="ItemModalDelete-popup">
+      <div className="ItemModalDelete">
+        <img
+          className="ItemModalDelete-close"
+          onClick={onClose}
+          src={closeX}
+          alt="close"
+        />
+        <div>
+          <p className="ItemModalDelete-lineA">
+            {' '}
+            Are you sure you want to delete this item?{' '}
+          </p>
+          <p className="ItemModalDelete-lineB"> This action is irreversible.</p>
+          <div className="ItemModalDelete-buttonContainer">
+            <button
+              className="ItemModalDelete-button"
+              onClick={() => {
+                handleCardDelete(card);
+              }}
+            >
+              {isLoading ? 'deleting' : 'delete'}
+            </button>
+            <button
+              className="ItemModalDelete-cancel"
+              onClick={handleCancelDelete}
+            >
               {' '}
-              Are you sure you want to delete this item?{' '}
-            </p>
-            <p className="ItemModalDelete-lineB">
-              {' '}
-              This action is irreversible.
-            </p>
-            <div className="ItemModalDelete-buttonContainer">
-              <button
-                className="ItemModalDelete-button"
-                onClick={() => {
-                  handleCardDelete(card);
-                  handleCancelDelete();
-                  onClose();
-                }}
-              >
-                Yes, delete item{' '}
-              </button>
-              <button
-                className="ItemModalDelete-cancel"
-                onClick={handleCancelDelete}
-              >
-                {' '}
-                Cancel{' '}
-              </button>
-            </div>
+              Cancel{' '}
+            </button>
           </div>
         </div>
       </div>
@@ -54,6 +48,7 @@ function ConfirmDeleteModal({
 }
 
 function ItemModal({
+  isLoading,
   card,
   onClose,
   isProfileModal,
@@ -61,13 +56,15 @@ function ItemModal({
   setClothingItems,
   onCardClick,
   handleCardDelete,
+  showDeleteModal,
+  setShowDeleteModal,
 }) {
   const src2 = card.imageUrl;
   const alternate = card.name;
   const title = card.name;
   const weather = card.weather;
 
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  // const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   function handleDeleteClick() {
     setShowDeleteModal(true);
@@ -100,6 +97,7 @@ function ItemModal({
           onClose={onClose}
           handleCardDelete={handleCardDelete}
           handleCancelDelete={() => setShowDeleteModal(false)}
+          isLoading={isLoading}
         />
       )}
     </div>

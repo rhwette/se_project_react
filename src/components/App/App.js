@@ -24,6 +24,9 @@ const App = () => {
   const [activeModal, setActiveModal] = useState('');
   const [isProfileModal, setIsProfileModal] = useState(false);
   const [selectedCard, setSelectedCard] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   let temperature = weatherData.temperature;
 
@@ -84,6 +87,7 @@ const App = () => {
   };
 
   const modalFormAdd = (name, imageUrl, weather) => {
+    setIsLoading(true);
     const id = clothingItems.length;
 
     addItem({ id, name, weather, imageUrl })
@@ -91,6 +95,7 @@ const App = () => {
         if (response) {
           setClothingItems([...clothingItems, response]);
           closeAllModals();
+          setIsLoading(false);
         }
       })
       .catch((err) => console.log(err));
@@ -103,11 +108,14 @@ const App = () => {
   };
 
   const handleCardDelete = (card) => {
+    setIsLoading(true);
     removeItem(card.id)
       .then((response) => {
         if (response) {
           setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
           closeAllModals();
+          setIsLoading(false);
+          setShowDeleteModal(false);
         }
       })
       .catch((err) => console.log(err));
@@ -118,11 +126,11 @@ const App = () => {
     setActiveModal('create');
   };
 
-  const currentDate = new Date().toLocaleString('default', {
-    month: 'long',
-    day: 'numeric',
-    time: 'numeric',
-  });
+  // const currentDate = new Date().toLocaleString('default', {
+  //   month: 'long',
+  //   day: 'numeric',
+  //   time: 'numeric',
+  // });
 
   return (
     <div className="App">
@@ -132,7 +140,7 @@ const App = () => {
         <div className="App-content">
           <Router>
             <Header
-              currentDate={currentDate}
+              // currentDate={currentDate}
               city={weatherData.city}
               name={nameOfPerson}
               clickHandler={handleAddCardClick}
@@ -166,6 +174,7 @@ const App = () => {
         </div>
         {activeModal === 'create' && (
           <AddItemModal
+            isLoading={isLoading}
             modalFormAdd={modalFormAdd}
             closeAllModals={closeAllModals}
           />
@@ -179,6 +188,9 @@ const App = () => {
             setClothingItems={setClothingItems}
             onCardClick={handleCardClick}
             handleCardDelete={handleCardDelete}
+            isLoading={isLoading}
+            showDeleteModal={showDeleteModal}
+            setShowDeleteModal={setShowDeleteModal}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

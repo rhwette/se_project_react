@@ -10,7 +10,14 @@ import {
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 
-function Header({ currentDate, city, name, clickHandler }) {
+const currentDate = new Date().toLocaleString('default', {
+  month: 'long',
+  day: 'numeric',
+  time: 'numeric',
+});
+
+// function Header({ currentDate, city, name, clickHandler }) {
+function Header({ city, name, clickHandler }) {
   const [value, setValue] = useState(false);
   const contextValue = useContext(CurrentTemperatureUnitContext);
   return (
