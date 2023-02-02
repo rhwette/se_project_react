@@ -25,7 +25,6 @@ const App = () => {
   const [isProfileModal, setIsProfileModal] = useState(false);
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
-
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   let temperature = weatherData.temperature;
@@ -126,12 +125,6 @@ const App = () => {
     setActiveModal('create');
   };
 
-  // const currentDate = new Date().toLocaleString('default', {
-  //   month: 'long',
-  //   day: 'numeric',
-  //   time: 'numeric',
-  // });
-
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
@@ -140,7 +133,6 @@ const App = () => {
         <div className="App-content">
           <Router>
             <Header
-              // currentDate={currentDate}
               city={weatherData.city}
               name={nameOfPerson}
               clickHandler={handleAddCardClick}

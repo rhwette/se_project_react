@@ -10,22 +10,6 @@ function AddItemModal({ isLoading, modalFormAdd, closeAllModals }) {
     weatherType: '',
   });
 
-  // const [name, setName] = useState('');
-  // const [image, setImage] = useState('');
-  // const [weatherType, setWeatherType] = useState('');
-
-  // const handleNameChange = (evt) => {
-  //   setName(evt.target.value);
-  // };
-
-  // const handleImageChange = (evt) => {
-  //   setImage(evt.target.value);
-  // };
-
-  // const handleWeatherTypeChange = (evt) => {
-  //   setWeatherType(evt.target.value);
-  // };
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     modalFormAdd(values.name, values.image, values.weatherType);
@@ -34,7 +18,6 @@ function AddItemModal({ isLoading, modalFormAdd, closeAllModals }) {
   return (
     <ModalWithForm
       title={'New garment'}
-      // buttonLabel={'Add garment'}
       buttonLabel={isLoading ? 'Saving...' : 'Save'}
       onSubmit={handleSubmit}
       onClose={closeAllModals}

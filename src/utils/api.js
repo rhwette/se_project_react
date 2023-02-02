@@ -13,9 +13,6 @@ export const getItemList = () => {
       'content-type': 'application/json',
     },
   }).then(handleServerResponse);
-  // .catch((error) => {
-  //   console.error(error);
-  // });
 };
 
 export const addItem = ({ id, name, weather, imageUrl }) => {
@@ -31,9 +28,6 @@ export const addItem = ({ id, name, weather, imageUrl }) => {
       imageUrl,
     }),
   }).then(handleServerResponse);
-  // .catch((error) => {
-  //   console.error(error);
-  // });
 };
 
 export const removeItem = (id) => {
@@ -43,7 +37,4 @@ export const removeItem = (id) => {
       'content-type': 'application/json',
     },
   }).then(handleServerResponse);
-  // .catch((error) => {
-  //   console.error(error);
-  // });
 };

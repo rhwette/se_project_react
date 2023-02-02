@@ -16,7 +16,6 @@ const currentDate = new Date().toLocaleString('default', {
   time: 'numeric',
 });
 
-// function Header({ currentDate, city, name, clickHandler }) {
 function Header({ city, name, clickHandler }) {
   const [value, setValue] = useState(false);
   const contextValue = useContext(CurrentTemperatureUnitContext);

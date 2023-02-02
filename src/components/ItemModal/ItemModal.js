@@ -64,8 +64,6 @@ function ItemModal({
   const title = card.name;
   const weather = card.weather;
 
-  // const [showDeleteModal, setShowDeleteModal] = useState(false);
-
   function handleDeleteClick() {
     setShowDeleteModal(true);
   }
